@@ -30,3 +30,11 @@ new Swiper('.slider-comparison', {
 		},
 	},
 });
+
+new Swiper('.slider-special', {
+	slidesPerView: 'auto',
+	navigation: {
+		nextEl: '.slider-special__btn-next',
+		prevEl: '.slider-special__btn-prev'
+	},
+});
