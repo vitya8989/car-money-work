@@ -94,7 +94,7 @@ range2.oninput = function () {
 }
 
 let toFirstBtn = document.querySelector('.to-first-btn');
-let toSecondBtn = document.querySelector('.to-second-btn');
+let toSecondBtn = document.querySelectorAll('.to-second-btn');
 let toThirdBtn = document.querySelector('.to-third-btn');
 let itemCredit1 = document.querySelector('.item-credit1');
 let itemCredit2 = document.querySelector('.item-credit2');
@@ -104,11 +104,15 @@ toFirstBtn.onclick = function () {
 	itemCredit2.classList.remove('active-credit');
 	itemCredit1.classList.add('active-credit');
 }
-toSecondBtn.onclick = function () {
-	event.preventDefault();
-	itemCredit1.classList.remove('active-credit');
-	itemCredit2.classList.add('active-credit');
+for (let i = 0; i < toSecondBtn.length; i++) {
+	toSecondBtn[i].onclick = function () {
+		event.preventDefault();
+		itemCredit1.classList.remove('active-credit');
+		itemCredit3.classList.remove('active-credit');
+		itemCredit2.classList.add('active-credit');
+	}
 }
+
 toThirdBtn.onclick = function () {
 	event.preventDefault();
 	itemCredit2.classList.remove('active-credit');
