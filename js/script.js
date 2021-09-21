@@ -38,3 +38,12 @@ new Swiper('.slider-special', {
 		prevEl: '.slider-special__btn-prev'
 	},
 });
+
+new Swiper('.slider-how', {
+	slidesPerView: 'auto',
+	breakpoints: {
+		1025: {
+			slidesPerView: 4,
+		},
+	},
+});
