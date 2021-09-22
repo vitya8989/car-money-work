@@ -20,6 +20,7 @@ if((isset($_POST['name']))&&(isset($_POST['telephone']))){
 								<p>Отчество: '.$_POST['patronymic'].'</p>
 								<p>Серия паспорта: '.$_POST['serial'].'</p>
 								<p>Номер паспорта: '.$_POST['number'].'</p>
+								<p>Согласие на обработку данных: '.$_POST['politic'].'</p>
                     </body>
                 </html>'; 
         $headers  = "Content-type: text/html; charset=utf-8 \r\n"; 
