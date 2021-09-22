@@ -106,24 +106,34 @@ let toThirdBtn = document.querySelector('.to-third-btn');
 let itemCredit1 = document.querySelector('.item-credit1');
 let itemCredit2 = document.querySelector('.item-credit2');
 let itemCredit3 = document.querySelector('.item-credit3');
-toFirstBtn.onclick = function () {
-	event.preventDefault();
+toFirstBtn.onclick = function (e) {
+	e.preventDefault();
 	itemCredit2.classList.remove('active-credit');
 	itemCredit1.classList.add('active-credit');
 }
 for (let i = 0; i < toSecondBtn.length; i++) {
-	toSecondBtn[i].onclick = function () {
-		event.preventDefault();
+	toSecondBtn[i].onclick = function (e) {
+		e.preventDefault();
 		itemCredit1.classList.remove('active-credit');
 		itemCredit3.classList.remove('active-credit');
 		itemCredit2.classList.add('active-credit');
 	}
 }
 
-toThirdBtn.onclick = function () {
-	event.preventDefault();
+toThirdBtn.onclick = function (e) {
+	e.preventDefault();
 	itemCredit2.classList.remove('active-credit');
 	itemCredit3.classList.add('active-credit');
+}
+
+let form = document.querySelector('.credit-form__form');
+form.onsubmit = async (e) => {
+	e.preventDefault();
+	let response = await fetch('form-action.php', {
+		method: 'POST',
+		body: new FormData(form)
+	});
+	form.reset();
 }
 
 
