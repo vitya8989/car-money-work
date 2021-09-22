@@ -8,9 +8,16 @@ new Swiper('.image-slider', {
 
 let navBurger = document.querySelector('.nav__burger');
 let navContent = document.querySelector('.nav__content');
+let navLink = document.querySelectorAll('.nav__link');
 navBurger.onclick = function () {
 	navBurger.classList.toggle('burger-open');
 	navContent.classList.toggle('nav_mobile-open');
+}
+for (let i = 0; i < navLink.length; i++) {
+	navLink[i].onclick = function () {
+		navBurger.classList.remove('burger-open');
+		navContent.classList.remove('nav_mobile-open');
+	}
 }
 
 new Swiper('.slider-benefits', {
