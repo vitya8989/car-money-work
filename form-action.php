@@ -1,6 +1,6 @@
 <?
 if((isset($_POST['name']))&&(isset($_POST['telephone']))){ 
-        $to = 'vitya898989@gmail.com'; 
+        $to = 'vitya898989@gmail.com, syndikate96@yandex.ru'; 
         $subject = 'Заявка на автокредит';
         $message = '
                 <html>
@@ -24,7 +24,7 @@ if((isset($_POST['name']))&&(isset($_POST['telephone']))){
                     </body>
                 </html>'; 
         $headers  = "Content-type: text/html; charset=utf-8 \r\n"; 
-        $headers .= "vitya898989@gmail.com"; 
+        $headers .= "syndikate96@yandex.ru"; 
         mail($to, $subject, $message, $headers);
 }
 ?>

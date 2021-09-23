@@ -6,6 +6,38 @@ new Swiper('.image-slider', {
 	slidesPerView: 'auto',
 });
 
+let lastAuto1600 = document.querySelector('.last-autocr1600');
+let lastAuto888 = document.querySelector('.last-autocr888');
+let autoSliderBtnNext = document.querySelector('.image-slider__btn-next');
+let autoSliderBtnPrev = document.querySelector('.image-slider__btn-prev');
+
+autoSliderBtnNext.onclick = function () {
+	if (window.innerWidth > 1188) {
+		if (lastAuto1600.classList.contains('swiper-slide-next')) {
+			autoSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+	if (window.innerWidth > 1052) {
+		if (lastAuto1600.nextElementSibling.classList.contains('swiper-slide-next')) {
+			autoSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+	if (window.innerWidth > 888) {
+		if (lastAuto888.classList.contains('swiper-slide-next')) {
+			autoSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+	if (window.innerWidth < 889) {
+		if (lastAuto888.nextElementSibling.classList.contains('swiper-slide-next')) {
+			autoSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+}
+
+autoSliderBtnPrev.onclick = function () {
+	autoSliderBtnNext.classList.remove('swiper-button-disabled');
+}
+
 let navBurger = document.querySelector('.nav__burger');
 let navContent = document.querySelector('.nav__content');
 let navLink = document.querySelectorAll('.nav__link');
@@ -45,6 +77,26 @@ new Swiper('.slider-special', {
 		prevEl: '.slider-special__btn-prev'
 	},
 });
+
+let lastSpecSlide = document.querySelector('.last-spec-slide');
+let SpecSlideNext = document.querySelector('.slider-special__btn-next');
+let SpecSlidePrev = document.querySelector('.slider-special__btn-prev');
+
+SpecSlideNext.onclick = function () {
+	if (window.innerWidth > 1206) {
+		if (lastSpecSlide.classList.contains('swiper-slide-active')) {
+			SpecSlideNext.classList.add('swiper-button-disabled');
+		}
+	}
+	if (window.innerWidth < 1207) {
+		if (lastSpecSlide.classList.contains('swiper-slide-next')) {
+			SpecSlideNext.classList.add('swiper-button-disabled');
+		}
+	}
+}
+SpecSlidePrev.onclick = function () {
+	SpecSlideNext.classList.remove('swiper-button-disabled');
+}
 
 new Swiper('.slider-how', {
 	slidesPerView: 'auto',
@@ -106,6 +158,12 @@ let toThirdBtn = document.querySelector('.to-third-btn');
 let itemCredit1 = document.querySelector('.item-credit1');
 let itemCredit2 = document.querySelector('.item-credit2');
 let itemCredit3 = document.querySelector('.item-credit3');
+let itemCredit4 = document.querySelector('.item-credit4');
+let itemCredit5 = document.querySelector('.item-credit5');
+let nameOutput = document.querySelectorAll('.name-output');
+let formName = document.querySelector('.form-name');
+let formSurame = document.querySelector('.form-surname');
+let formPatronymic = document.querySelector('.form-patronymic');
 toFirstBtn.onclick = function (e) {
 	e.preventDefault();
 	itemCredit2.classList.remove('active-credit');
@@ -133,7 +191,119 @@ form.onsubmit = async (e) => {
 		method: 'POST',
 		body: new FormData(form)
 	});
-	form.reset();
+	itemCredit3.classList.remove('active-credit');
+	itemCredit4.classList.add('active-credit');
+	for (let i = 0; i < nameOutput.length; i++) {
+		nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
+	}
+	startTimer();
 }
+
+
+
+
+const FULL_DASH_ARRAY = 283;
+const WARNING_THRESHOLD = 10;
+const ALERT_THRESHOLD = 5;
+const COLOR_CODES = {
+	info: {
+		color: "green"
+	},
+	warning: {
+		color: "orange",
+		threshold: WARNING_THRESHOLD
+	},
+	alert: {
+		color: "red",
+		threshold: ALERT_THRESHOLD
+	}
+};
+const TIME_LIMIT = 13;
+let timePassed = 0;
+let timeLeft = TIME_LIMIT;
+let timerInterval = null;
+let remainingPathColor = COLOR_CODES.info.color;
+document.getElementById("timer").innerHTML = `<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <path
+        id="base-timer-path-remaining"
+        stroke-dasharray="283"
+        class="base-timer__path-remaining ${remainingPathColor}"
+        d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "
+      ></path>
+    </g>
+  </svg>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(
+	timeLeft
+)}</span>
+</div>
+`;
+
+function onTimesUp() {
+	clearInterval(timerInterval);
+}
+function startTimer() {
+	timerInterval = setInterval(() => {
+		timePassed = timePassed += 1;
+		timeLeft = TIME_LIMIT - timePassed;
+		document.getElementById("base-timer-label").innerHTML = formatTime(
+			timeLeft
+		);
+		setCircleDasharray();
+		setRemainingPathColor(timeLeft);
+		if (timeLeft === 0) {
+			onTimesUp();
+			form.reset();
+			itemCredit4.classList.remove('active-credit');
+			itemCredit5.classList.add('active-credit');
+		}
+	}, 1000);
+}
+function formatTime(time) {
+	const minutes = Math.floor(time / 60);
+	let seconds = time % 60;
+	if (seconds < 10) {
+		seconds = `0${seconds}`;
+	}
+	return `${minutes}:${seconds}`;
+}
+function setRemainingPathColor(timeLeft) {
+	const { alert, warning, info } = COLOR_CODES;
+	if (timeLeft <= alert.threshold) {
+		document
+			.getElementById("base-timer-path-remaining")
+			.classList.remove(warning.color);
+		document
+			.getElementById("base-timer-path-remaining")
+			.classList.add(alert.color);
+	} else if (timeLeft <= warning.threshold) {
+		document
+			.getElementById("base-timer-path-remaining")
+			.classList.remove(info.color);
+		document
+			.getElementById("base-timer-path-remaining")
+			.classList.add(warning.color);
+	}
+}
+function calculateTimeFraction() {
+	const rawTimeFraction = timeLeft / TIME_LIMIT;
+	return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+}
+function setCircleDasharray() {
+	const circleDasharray = `${(
+		calculateTimeFraction() * FULL_DASH_ARRAY
+	).toFixed(0)} 283`;
+	document
+		.getElementById("base-timer-path-remaining")
+		.setAttribute("stroke-dasharray", circleDasharray);
+}
+
 
 
