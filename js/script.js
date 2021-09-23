@@ -251,11 +251,6 @@ form.onsubmit = async (e) => {
 	startTimer();
 }
 
-
-
-
-
-
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
@@ -359,5 +354,21 @@ function setCircleDasharray() {
 		.setAttribute("stroke-dasharray", circleDasharray);
 }
 
-
-
+let message = document.querySelectorAll('.speak__message');
+let speak = document.querySelector('.speak');
+let offsetPosition;
+window.onload = function () {
+	let scrollTarget = speak;
+	offsetPosition = scrollTarget.getBoundingClientRect().top + window.pageYOffset;
+	return offsetPosition;
+}
+window.onscroll = function () {
+	let centerOfWindow = window.pageYOffset + window.innerHeight / 1.85;
+	if (centerOfWindow >= offsetPosition) {
+		for (let i = 0; i < message.length; i++) {
+			setTimeout(function () {
+				message[i].classList.add('message-visible');
+			}, 1500 * i);
+		}
+	}
+}
