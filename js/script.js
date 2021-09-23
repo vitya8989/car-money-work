@@ -1,44 +1,79 @@
-new Swiper('.image-slider', {
+new Swiper('.auto-slider', {
 	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
+		nextEl: '.image-slider__btn-next',
+		prevEl: '.image-slider__btn-prev'
 	},
 	slidesPerView: 'auto',
 });
-
-let lastAuto1600 = document.querySelectorAll('.last-autocr1600');
-let lastAuto888 = document.querySelectorAll('.last-autocr888');
-let autoSliderBtnNext = document.querySelectorAll('.image-slider__btn-next');
-let autoSliderBtnPrev = document.querySelectorAll('.image-slider__btn-prev');
-
-for (let i = 0; i < autoSliderBtnNext.length; i++) {
-	autoSliderBtnNext[i].onclick = function () {
-		if (window.innerWidth > 1188) {
-			if (lastAuto1600[i].classList.contains('swiper-slide-next')) {
-				autoSliderBtnNext[i].classList.add('swiper-button-disabled');
-			}
-		}
-		if (window.innerWidth > 1052) {
-			if (lastAuto1600[i].nextElementSibling.classList.contains('swiper-slide-next')) {
-				autoSliderBtnNext[i].classList.add('swiper-button-disabled');
-			}
-		}
-		if (window.innerWidth > 888) {
-			if (lastAuto888[i].classList.contains('swiper-slide-next')) {
-				autoSliderBtnNext[i].classList.add('swiper-button-disabled');
-			}
-		}
-		if (window.innerWidth < 889) {
-			if (lastAuto888[i].nextElementSibling.classList.contains('swiper-slide-next')) {
-				autoSliderBtnNext[i].classList.add('swiper-button-disabled');
-			}
+new Swiper('.banks-slider', {
+	navigation: {
+		nextEl: '.banks__slider-btn-next',
+		prevEl: '.banks__slider-btn-prev'
+	},
+	slidesPerView: 'auto',
+});
+let lastAuto1600 = document.querySelector('.last-autocr1600');
+let lastAuto888 = document.querySelector('.last-autocr888');
+let autoSliderBtnNext = document.querySelector('.image-slider__btn-next');
+let autoSliderBtnPrev = document.querySelector('.image-slider__btn-prev');
+let lastBank1600 = document.querySelector('.last-bank1600');
+let lastBank888 = document.querySelector('.last-bank888');
+let bankSliderBtnNext = document.querySelector('.banks__slider-btn-next');
+let bankSliderBtnPrev = document.querySelector('.banks__slider-btn-prev');
+autoSliderBtnNext.onclick = function () {
+	if (window.innerWidth > 1188) {
+		if (lastAuto1600.classList.contains('swiper-slide-next')) {
+			autoSliderBtnNext.classList.add('swiper-button-disabled');
 		}
 	}
-
-	autoSliderBtnPrev[i].onclick = function () {
-		autoSliderBtnNext[i].classList.remove('swiper-button-disabled');
+	if (window.innerWidth > 1052) {
+		if (lastAuto1600.nextElementSibling.classList.contains('swiper-slide-next')) {
+			autoSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+	if (window.innerWidth > 888) {
+		if (lastAuto888.classList.contains('swiper-slide-next')) {
+			autoSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+	if (window.innerWidth < 889) {
+		if (lastAuto888.nextElementSibling.classList.contains('swiper-slide-next')) {
+			autoSliderBtnNext.classList.add('swiper-button-disabled');
+		}
 	}
 }
+
+autoSliderBtnPrev.onclick = function () {
+	autoSliderBtnNext.classList.remove('swiper-button-disabled');
+}
+
+bankSliderBtnNext.onclick = function () {
+	if (window.innerWidth > 1188) {
+		if (lastBank1600.classList.contains('swiper-slide-next')) {
+			bankSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+	if (window.innerWidth > 1052) {
+		if (lastBank1600.nextElementSibling.classList.contains('swiper-slide-next')) {
+			bankSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+	if (window.innerWidth > 888) {
+		if (lastBank888.classList.contains('swiper-slide-next')) {
+			bankSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+	if (window.innerWidth < 889) {
+		if (lastBank888.nextElementSibling.classList.contains('swiper-slide-next')) {
+			bankSliderBtnNext.classList.add('swiper-button-disabled');
+		}
+	}
+}
+
+bankSliderBtnPrev.onclick = function () {
+	bankSliderBtnNext.classList.remove('swiper-button-disabled');
+}
+
 
 let navBurger = document.querySelector('.nav__burger');
 let navContent = document.querySelector('.nav__content');
@@ -383,3 +418,5 @@ new Swiper('.speak__slider', {
 		},
 	},
 });
+
+
