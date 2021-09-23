@@ -419,4 +419,30 @@ new Swiper('.speak__slider', {
 	},
 });
 
+let questions = document.querySelectorAll('.questions__question');
+let answers = document.querySelectorAll('.questions__answer');
+let buttons = document.querySelectorAll('.question__button');
+if (questions.length > 0) {
+	for (let i = 0; i < questions.length; i++) {
+		questions[i].onclick = function () {
+			for (let j = 0; j < questions.length; j++) {
+				if (answers[j] != this.nextElementSibling) {
+					answers[j].classList.remove('opened');
+					answers[j].style.maxHeight = 0;
+				}
+				if (buttons[j] != this.lastElementChild) {
+					buttons[j].classList.remove('rotate');
+				}
+			}
+			if (this.nextElementSibling.classList.contains('opened')) {
+				this.nextElementSibling.classList.remove('opened');
+				this.nextElementSibling.style.maxHeight = 0;
+			} else {
+				this.nextElementSibling.classList.add('opened');
+				this.nextElementSibling.style.maxHeight = this.nextElementSibling.scrollHeight + 'px';
+			}
+			this.lastElementChild.classList.toggle('rotate');
+		}
+	}
+}
 
