@@ -445,4 +445,6 @@ if (questions.length > 0) {
 		}
 	}
 }
-
+new Swiper('.instagram-slider', {
+	slidesPerView: 'auto',
+});
