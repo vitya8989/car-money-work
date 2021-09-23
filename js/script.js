@@ -372,3 +372,12 @@ window.onscroll = function () {
 		}
 	}
 }
+
+new Swiper('.speak__slider', {
+	slidesPerView: 'auto',
+	breakpoints: {
+		769: {
+			slidesPerView: 2,
+		},
+	},
+});
