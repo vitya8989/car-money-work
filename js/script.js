@@ -164,6 +164,8 @@ let nameOutput = document.querySelectorAll('.name-output');
 let formName = document.querySelector('.form-name');
 let formSurame = document.querySelector('.form-surname');
 let formPatronymic = document.querySelector('.form-patronymic');
+let formTel = document.querySelector('.item-credit__tel');
+let formNumbersOnly = document.querySelectorAll('.form-numbers-only');
 toFirstBtn.onclick = function (e) {
 	e.preventDefault();
 	itemCredit2.classList.remove('active-credit');
@@ -184,19 +186,63 @@ toThirdBtn.onclick = function (e) {
 	itemCredit3.classList.add('active-credit');
 }
 
+function setCursorPosition(pos, elem) {
+	elem.focus();
+	if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+	else if (elem.createTextRange) {
+		var range = elem.createTextRange();
+		range.collapse(true);
+		range.moveEnd("character", pos);
+		range.moveStart("character", pos);
+		range.select()
+	}
+}
+function mask(event) {
+	var matrix = this.defaultValue,
+		i = 0,
+		def = matrix.replace(/\D/g, ""),
+		val = this.value.replace(/\D/g, "");
+	def.length >= val.length && (val = def);
+	matrix = matrix.replace(/[_\d]/g, function (a) {
+		return val.charAt(i++) || "_"
+	});
+	this.value = matrix;
+	i = matrix.lastIndexOf(val.substr(-1));
+	i < matrix.length && matrix != this.defaultValue ? i++ : i = matrix.indexOf("_");
+	setCursorPosition(i, this)
+}
+formTel.addEventListener("input", mask, false);
+
+function validate_form() {
+	let valid = true;
+	if (formTel.value == "+7(___)___-____") {
+		valid = false;
+	}
+	return valid;
+};
+
+for (let i = 0; i < formNumbersOnly.length; i++) {
+	formNumbersOnly[i].oninput = function () {
+		formNumbersOnly[i].value = formNumbersOnly[i].value.replace(/[^0-9]/g, '');
+	}
+}
+
+
 let form = document.querySelector('.credit-form__form');
 form.onsubmit = async (e) => {
 	e.preventDefault();
-	let response = await fetch('form-action.php', {
-		method: 'POST',
-		body: new FormData(form)
-	});
-	itemCredit3.classList.remove('active-credit');
-	itemCredit4.classList.add('active-credit');
-	for (let i = 0; i < nameOutput.length; i++) {
-		nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
+	if (validate_form()) {
+		let response = await fetch('form-action.php', {
+			method: 'POST',
+			body: new FormData(form)
+		});
+		itemCredit3.classList.remove('active-credit');
+		itemCredit4.classList.add('active-credit');
+		for (let i = 0; i < nameOutput.length; i++) {
+			nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
+		}
+		startTimer();
 	}
-	startTimer();
 }
 
 
