@@ -166,7 +166,7 @@ let formSurame = document.querySelector('.form-surname');
 let formPatronymic = document.querySelector('.form-patronymic');
 let formTel = document.querySelector('.item-credit__tel');
 let formNumbersOnly = document.querySelectorAll('.form-numbers-only');
-let formSubmitBox = document.querySelector('.item-credit__btnsBox3');
+let formNextBox = document.querySelector('.item-credit__btn-nextBox');
 toFirstBtn.onclick = function (e) {
 	e.preventDefault();
 	itemCredit2.classList.remove('active-credit');
@@ -174,11 +174,18 @@ toFirstBtn.onclick = function (e) {
 }
 for (let i = 0; i < toSecondBtn.length; i++) {
 	toSecondBtn[i].onclick = function (e) {
-		e.preventDefault();
-		itemCredit1.classList.remove('active-credit');
-		itemCredit3.classList.remove('active-credit');
-		itemCredit2.classList.add('active-credit');
+		if (validate_form()) {
+			e.preventDefault();
+			itemCredit1.classList.remove('active-credit');
+			itemCredit3.classList.remove('active-credit');
+			itemCredit2.classList.add('active-credit');
+		} else {
+			formNextBox.classList.add('disabled-btn');
+		}
 	}
+}
+formTel.onfocus = function () {
+	formNextBox.classList.remove('disabled-btn');
 }
 
 toThirdBtn.onclick = function (e) {
@@ -232,24 +239,19 @@ for (let i = 0; i < formNumbersOnly.length; i++) {
 let form = document.querySelector('.credit-form__form');
 form.onsubmit = async (e) => {
 	e.preventDefault();
-	if (validate_form()) {
-		let response = await fetch('form-action.php', {
-			method: 'POST',
-			body: new FormData(form)
-		});
-		itemCredit3.classList.remove('active-credit');
-		itemCredit4.classList.add('active-credit');
-		for (let i = 0; i < nameOutput.length; i++) {
-			nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
-		}
-		startTimer();
-	} else {
-		formSubmitBox.classList.add('disabled-btn');
+	let response = await fetch('form-action.php', {
+		method: 'POST',
+		body: new FormData(form)
+	});
+	itemCredit3.classList.remove('active-credit');
+	itemCredit4.classList.add('active-credit');
+	for (let i = 0; i < nameOutput.length; i++) {
+		nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
 	}
+	startTimer();
 }
-formTel.onfocus = function () {
-	formSubmitBox.classList.remove('disabled-btn');
-}
+
+
 
 
 
