@@ -6,36 +6,38 @@ new Swiper('.image-slider', {
 	slidesPerView: 'auto',
 });
 
-let lastAuto1600 = document.querySelector('.last-autocr1600');
-let lastAuto888 = document.querySelector('.last-autocr888');
-let autoSliderBtnNext = document.querySelector('.image-slider__btn-next');
-let autoSliderBtnPrev = document.querySelector('.image-slider__btn-prev');
+let lastAuto1600 = document.querySelectorAll('.last-autocr1600');
+let lastAuto888 = document.querySelectorAll('.last-autocr888');
+let autoSliderBtnNext = document.querySelectorAll('.image-slider__btn-next');
+let autoSliderBtnPrev = document.querySelectorAll('.image-slider__btn-prev');
 
-autoSliderBtnNext.onclick = function () {
-	if (window.innerWidth > 1188) {
-		if (lastAuto1600.classList.contains('swiper-slide-next')) {
-			autoSliderBtnNext.classList.add('swiper-button-disabled');
+for (let i = 0; i < autoSliderBtnNext.length; i++) {
+	autoSliderBtnNext[i].onclick = function () {
+		if (window.innerWidth > 1188) {
+			if (lastAuto1600[i].classList.contains('swiper-slide-next')) {
+				autoSliderBtnNext[i].classList.add('swiper-button-disabled');
+			}
+		}
+		if (window.innerWidth > 1052) {
+			if (lastAuto1600[i].nextElementSibling.classList.contains('swiper-slide-next')) {
+				autoSliderBtnNext[i].classList.add('swiper-button-disabled');
+			}
+		}
+		if (window.innerWidth > 888) {
+			if (lastAuto888[i].classList.contains('swiper-slide-next')) {
+				autoSliderBtnNext[i].classList.add('swiper-button-disabled');
+			}
+		}
+		if (window.innerWidth < 889) {
+			if (lastAuto888[i].nextElementSibling.classList.contains('swiper-slide-next')) {
+				autoSliderBtnNext[i].classList.add('swiper-button-disabled');
+			}
 		}
 	}
-	if (window.innerWidth > 1052) {
-		if (lastAuto1600.nextElementSibling.classList.contains('swiper-slide-next')) {
-			autoSliderBtnNext.classList.add('swiper-button-disabled');
-		}
-	}
-	if (window.innerWidth > 888) {
-		if (lastAuto888.classList.contains('swiper-slide-next')) {
-			autoSliderBtnNext.classList.add('swiper-button-disabled');
-		}
-	}
-	if (window.innerWidth < 889) {
-		if (lastAuto888.nextElementSibling.classList.contains('swiper-slide-next')) {
-			autoSliderBtnNext.classList.add('swiper-button-disabled');
-		}
-	}
-}
 
-autoSliderBtnPrev.onclick = function () {
-	autoSliderBtnNext.classList.remove('swiper-button-disabled');
+	autoSliderBtnPrev[i].onclick = function () {
+		autoSliderBtnNext[i].classList.remove('swiper-button-disabled');
+	}
 }
 
 let navBurger = document.querySelector('.nav__burger');
