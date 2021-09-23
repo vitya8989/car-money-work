@@ -166,6 +166,7 @@ let formSurame = document.querySelector('.form-surname');
 let formPatronymic = document.querySelector('.form-patronymic');
 let formTel = document.querySelector('.item-credit__tel');
 let formNumbersOnly = document.querySelectorAll('.form-numbers-only');
+let formSubmitBox = document.querySelector('.item-credit__btnsBox3');
 toFirstBtn.onclick = function (e) {
 	e.preventDefault();
 	itemCredit2.classList.remove('active-credit');
@@ -242,7 +243,12 @@ form.onsubmit = async (e) => {
 			nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
 		}
 		startTimer();
+	} else {
+		formSubmitBox.classList.add('disabled-btn');
 	}
+}
+formTel.onfocus = function () {
+	formSubmitBox.classList.remove('disabled-btn');
 }
 
 
