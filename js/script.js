@@ -42,7 +42,7 @@ if (document.location.pathname.includes('questionnaire')) {
 		footerBottom.appendChild(footerMap);
 	}
 
-	let telMask = document.querySelector('.tel-mask');
+	let telMask = document.querySelectorAll('.tel-mask');
 	function setCursorPosition(pos, elem) {
 		elem.focus();
 		if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
@@ -68,7 +68,10 @@ if (document.location.pathname.includes('questionnaire')) {
 		i < matrix.length && matrix != this.defaultValue ? i++ : i = matrix.indexOf("_");
 		setCursorPosition(i, this)
 	}
-	telMask.addEventListener("input", mask, false);
+	for (let i = 0; i < telMask.length; i++) {
+		telMask[i].addEventListener("input", mask, false);
+	}
+
 
 	function validate_form() {
 		let valid = true;
