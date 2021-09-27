@@ -158,3 +158,21 @@ for (let i = 0; i < nextStep.length; i++) {
 	}
 }
 
+let actualCredit2 = document.querySelector('.actual-credit-2Box');
+let actualCredit3 = document.querySelector('.actual-credit-3Box');
+let actualCredit4 = document.querySelector('.actual-credit-4Box');
+let addCredit2 = document.querySelector('.add-credit-2');
+let addCredit3 = document.querySelector('.add-credit-3');
+let addCredit4 = document.querySelector('.add-credit-4');
+addCredit2.onclick = function (event) {
+	event.preventDefault();
+	actualCredit2.classList.add('active-actual-credit');
+}
+addCredit3.onclick = function (event) {
+	event.preventDefault();
+	actualCredit3.classList.add('active-actual-credit');
+}
+addCredit4.onclick = function (event) {
+	event.preventDefault();
+	actualCredit4.classList.add('active-actual-credit');
+}

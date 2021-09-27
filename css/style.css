@@ -2248,7 +2248,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   text-align: center
 }
 .margin-right-input-small {
-  margin: 0 40px 0 0
+  margin: 23px 40px 0 0
 }
 .width-oversize {
   width: 636px
@@ -2400,12 +2400,34 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   margin: 20px 0 0 0
 }
 .radioBox-16 {
-  gap: 40px;
+  gap: 20px;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start
+}
+.radioBox-16 .questionnaire__label,
+.radioBox-17 .questionnaire__label,
+.radioBox-18 .questionnaire__label,
+.radioBox-19 .questionnaire__label {
+  margin: 0 18px 0 0
+}
+.actual-credit-2Box,
+.actual-credit-3Box,
+.actual-credit-4Box {
+  margin: 60px 0 0 0
+}
+.add-more-credit {
+  margin: 40px 0 0 0;
+  width: 308px;
+  height: 60px
+}
+.actual-credit {
+  display: none
+}
+.actual-credit.active-actual-credit {
+  display: block
 }
 .block-15 {
   display: -webkit-box;
@@ -2456,13 +2478,19 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   line-height: 17px;
   text-align: center
 }
-.block-14__title {
+.block-15__title {
   font-size: 18px;
   line-height: 30px;
   font-family: PTSansCaption
 }
+.block-15__subtitle {
+  margin: 15px 0 0 0;
+  font-family: PTSansCaption;
+  font-size: 14px;
+  line-height: 20px
+}
 .checkboxBox-9 {
-  margin: 54px 0 0 0
+  margin: 25px 0 0 0
 }
 .label-check-9 {
   color: #373737
@@ -2480,6 +2508,8 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 20px;
   margin: 20px 0 0 0
 }
@@ -3278,7 +3308,10 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     display: block
   }
   .inputs__wrapper {
-    gap: 15px
+    gap: 15px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
   }
   .text-input__label {
     font-weight: 300
@@ -3375,8 +3408,11 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     -ms-flex: 0 1 100%;
     flex: 0 1 100%
   }
+  .block-7 .inputs__wrapper {
+    gap: 5px
+  }
   .margin-right-input-small {
-    margin: 0 35px 0 0
+    margin: 23px 0 0 0
   }
   .radio-flexBox-1 {
     gap: 15px
@@ -3394,37 +3430,47 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .radio-flexBox-1 .order-3 {
     -webkit-box-ordinal-group: 4;
     -ms-flex-order: 3;
-    order: 3
+    order: 3;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 17%;
+    flex: 0 1 17%
   }
   .radio-flexBox-1 .order-4 {
     -webkit-box-ordinal-group: 5;
     -ms-flex-order: 4;
-    order: 4
+    order: 4;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 17%;
+    flex: 0 1 17%
   }
   .radio-flexBox-1 .order-5 {
     -webkit-box-ordinal-group: 6;
     -ms-flex-order: 5;
-    order: 5
+    order: 5;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 17%;
+    flex: 0 1 17%
   }
   .radio-flexBox-1 .order-6 {
     -webkit-box-ordinal-group: 7;
     -ms-flex-order: 6;
-    order: 6
+    order: 6;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 17%;
+    flex: 0 1 17%
   }
   .radio-flexBox-1 .order-7 {
     -webkit-box-ordinal-group: 8;
     -ms-flex-order: 7;
-    order: 7
+    order: 7;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 17%;
+    flex: 0 1 17%
   }
   .radio-flexBox-1 .order-8 {
     -webkit-box-ordinal-group: 9;
     -ms-flex-order: 8;
     order: 8
-  }
-  .radio-flexBox-1 .questionnaire__label {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 25%;
-    flex: 0 1 25%
   }
   .radio-flexBox-1 .flex100-label {
     -webkit-box-flex: 0;
@@ -3433,8 +3479,25 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
   .radio-flexBox-1 .flex75-label {
     -webkit-box-flex: 0;
-    -ms-flex: 0 1 75%;
-    flex: 0 1 75%
+    -ms-flex: 0 1 69%;
+    flex: 0 1 69%
+  }
+  .radioBox-6 {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  .wrapper-small-inputs {
+    margin: 45px 0 0 0
+  }
+  .block-11 .inputs__wrapper .text-input {
+    margin: 30px 0 0 0
+  }
+  .block-11 .inputs__wrapper .text-input .text-input__label {
+    top: -35px
+  }
+  .other-money__item .text-input {
+    max-width: 110px
   }
 }
 @media (max-width:730px) {
