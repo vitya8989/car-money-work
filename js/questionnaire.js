@@ -59,6 +59,9 @@ if (window.innerWidth < 726) {
 }
 
 let telMask = document.querySelectorAll('.tel-mask');
+let onlyLetter = document.querySelectorAll('.only-letter');
+let onlyNumberMask = document.querySelectorAll('.only-number-mask');
+let onlyNumber = document.querySelectorAll('.only-number');
 function setCursorPosition(pos, elem) {
 	elem.focus();
 	if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
@@ -84,18 +87,32 @@ function mask(event) {
 	i < matrix.length && matrix != this.defaultValue ? i++ : i = matrix.indexOf("_");
 	setCursorPosition(i, this)
 }
+
 for (let i = 0; i < telMask.length; i++) {
 	telMask[i].addEventListener("input", mask, false);
 }
+for (let i = 0; i < onlyNumberMask.length; i++) {
+	onlyNumberMask[i].addEventListener("input", mask, false);
+}
+for (let i = 0; i < onlyLetter.length; i++) {
+	onlyLetter[i].addEventListener('keyup', function () {
+		this.value = this.value.replace(/[\w]/g, '');
+	});
+}
+for (let i = 0; i < onlyNumber.length; i++) {
+	onlyNumber[i].addEventListener('keyup', function () {
+		this.value = this.value.replace(/[^\d]/g, '');
+	});
+}
 
 
-function validate_form() {
-	let valid = true;
-	if (telMask.value == "+7(___)___-____") {
-		valid = false;
-	}
-	return valid;
-};
+// function validate_form() {
+// 	let valid = true;
+// 	if (telMask.value == "+7(___)___-____") {
+// 		valid = false;
+// 	}
+// 	return valid;
+// };
 
 let fileInput = document.getElementById('fileElem');
 let dropArea = document.getElementById('drop-area');
@@ -119,28 +136,51 @@ function highlight(e) {
 function unhighlight(e) {
 	dropArea.classList.remove('highlight')
 }
-dropArea.addEventListener('drop', handleDrop, false)
+dropArea.addEventListener('drop', handleDrop, false);
 function handleDrop(e) {
-	let dt = e.dataTransfer
-	let files = dt.files
-	handleFiles(files)
+	let dt = e.dataTransfer;
+	let files = dt.files;
+	handleFiles(files);
 }
 function handleFiles(files) {
-	([...files]).forEach(uploadFile)
+	([...files]).forEach(uploadFile);
+	onchangeInput = true;
 }
+let onchangeInput = false;
+let prevImageBoxBox = [];
+let spanPrevImage = [];
 function uploadFile(file) {
 	let reader = new FileReader();
 	reader.onload = function (e) {
 		let prevImage = document.createElement('img');
+		let prevImageBox = document.createElement('div');
+		let spanClosePrevImage = document.createElement('span');
+		prevImageBox.classList.add('prev-image');
+		spanClosePrevImage.classList.add('close-prev-image');
 		prevImage.src = `${e.target.result}`;
-		filePreview.appendChild(prevImage);
-		//filePreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
+		prevImageBox.appendChild(prevImage);
+		prevImageBox.appendChild(spanClosePrevImage);
+		filePreview.appendChild(prevImageBox);
+		prevImageBoxBox.push(prevImageBox);
+		spanPrevImage.push(spanClosePrevImage);
+		return prevImageBoxBox, spanPrevImage;
 	}
 	reader.onerror = function (e) {
 		alert('Ошибка');
 	}
 	reader.readAsDataURL(file);
 }
+
+setInterval(() => {
+	if (onchangeInput) {
+		for (let i = 0; i < prevImageBoxBox.length; i++) {
+			spanPrevImage[i].onclick = function () {
+				prevImageBoxBox[i].classList.add('none-image');
+			}
+		}
+	}
+}, 2000);
+
 let nextStep = document.querySelectorAll('.button-next-step');
 let prevStep = document.querySelectorAll('.button-prev-step');
 let questionnaireStep = document.querySelectorAll('.questionnaire__step');
