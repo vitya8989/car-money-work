@@ -3311,7 +3311,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     padding: 40px 0
   }
   .questionnaire__content {
-    padding: 40px 0
+    padding: 40px 0 20px
   }
   .questionnaire__title {
     font-size: 25px;
@@ -3368,7 +3368,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .button-step {
     width: 144px;
     height: 50px;
-    display: block
+    display: block;
+    font-size: 16px;
+    line-height: 19px
   }
   .button-step.button-prev-step {
     background: #fff;
@@ -3524,6 +3526,95 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
   .other-money__item .text-input {
     max-width: 110px
+  }
+  .other-money__item {
+    padding: 15px;
+    background: #f4f4f4;
+    border-radius: 10px
+  }
+  .other-money__body {
+    gap: 10px
+  }
+  .radioBox-10 label:first-of-type,
+  .radioBox-10 label:nth-of-type(2),
+  .radioBox-11 label:first-of-type,
+  .radioBox-11 label:nth-of-type(2),
+  .radioBox-12 label:first-of-type,
+  .radioBox-12 label:nth-of-type(2),
+  .radioBox-13 label:first-of-type,
+  .radioBox-13 label:nth-of-type(2) {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 43%;
+    flex: 0 1 43%
+  }
+  .radioBox-10 label:nth-of-type(3),
+  .radioBox-10 label:nth-of-type(4),
+  .radioBox-11 label:nth-of-type(3),
+  .radioBox-11 label:nth-of-type(4),
+  .radioBox-12 label:nth-of-type(3),
+  .radioBox-12 label:nth-of-type(4),
+  .radioBox-13 label:nth-of-type(3),
+  .radioBox-13 label:nth-of-type(4) {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%
+  }
+  .private-auto__item .inputs__wrapper .text-input.width-small {
+    width: 130px
+  }
+  .radioBox-14 label {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%
+  }
+  .block-13 .inputs__wrapper .text-input:first-of-type,
+  .block-13 .inputs__wrapper .text-input:nth-of-type(2) {
+    max-width: 144px
+  }
+  .block-13 .inputs__wrapper .radioBox-15 .text-input,
+  .block-13 .inputs__wrapper .radioBox-15 .text-input input {
+    min-width: 100%
+  }
+  .block-15 {
+    display: block;
+    margin: 25px 0 0 0
+  }
+  .drop-area {
+    width: 265px;
+    height: 230px;
+    margin: 20px auto 0
+  }
+  .block-15__title {
+    font-size: 16px;
+    line-height: 21px
+  }
+  .block-15__subtitle {
+    margin: 10px 0 0 0
+  }
+  .questionnaire__submit {
+    margin: 20px 0 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  .questionnaire__submitBtn {
+    font-size: 16px;
+    line-height: 19px;
+    width: 144px;
+    height: 50px
+  }
+  .file-preview {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0;
+    padding: 20px
   }
 }
 @media (max-width:730px) {

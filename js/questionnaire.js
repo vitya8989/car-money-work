@@ -216,3 +216,13 @@ addCredit4.onclick = function (event) {
 	event.preventDefault();
 	actualCredit4.classList.add('active-actual-credit');
 }
+
+let block15TitleBox = document.querySelector('.block-15__titleBox');
+let block15 = document.querySelector('.block-15');
+let questionnaireBTN = document.querySelector('.questionnaire__submitBtn');
+if (window.innerWidth < 769) {
+	block15.prepend(block15TitleBox);
+	questionnaireBTN.value = "Отправить";
+}
+
+
