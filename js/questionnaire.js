@@ -15,6 +15,7 @@ testWebP(function (support) {
 		document.querySelector('body').classList.add('no-webp');
 	}
 });
+
 let navBurger = document.querySelector('.nav__burger');
 let navContent = document.querySelector('.nav__content');
 let navLink = document.querySelectorAll('.nav__link');
@@ -220,9 +221,15 @@ addCredit4.onclick = function (event) {
 let block15TitleBox = document.querySelector('.block-15__titleBox');
 let block15 = document.querySelector('.block-15');
 let questionnaireBTN = document.querySelector('.questionnaire__submitBtn');
+let appendInput = document.querySelector('.append-input');
+let appendInputBox = document.querySelector('.append-inputBox');
+let dropAreaWrapper = document.querySelector('.drop-area__wrapper');
+
 if (window.innerWidth < 769) {
 	block15.prepend(block15TitleBox);
 	questionnaireBTN.value = "Отправить";
+	appendInputBox.appendChild(appendInput);
+	dropAreaWrapper.appendChild(filePreview);
 }
 
 

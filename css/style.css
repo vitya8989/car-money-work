@@ -2088,7 +2088,7 @@ body {
   font-family: PTSansCaption
 }
 .questionnaire__block {
-  margin: 40px 0 0 0
+  margin: 30px 0 0 0
 }
 .blue-subtitle {
   font-size: 18px;
@@ -2104,14 +2104,14 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 20px 0 0 0;
+  margin: 20px -10px -10px -10px;
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end
 }
 .text-input {
-  position: relative
+  position: relative;
+  margin: 0 10px 20px 10px
 }
 .text-input input {
   font-weight: 300;
@@ -2144,7 +2144,7 @@ body {
   width: 472px
 }
 .with-label {
-  margin: 23px 0 0 0
+  margin: 23px 10px 20px 10px
 }
 .questionnaire__btnBox {
   display: none
@@ -2187,25 +2187,13 @@ input[type=checkbox] {
   top: -1px
 }
 .questionnaire__label::after {
-  content: "\2714";
-  font-size: 14px;
-  color: #fff;
-  top: -.5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: color .3s ease 0s;
-  -o-transition: color .3s ease 0s;
-  transition: color .3s ease 0s
+  content: "";
+  top: -1px;
+  background: url(../img/icons/galka.svg) center/16px 16px no-repeat;
+  display: none
 }
 input[type=checkbox]:checked + .questionnaire__label::after {
-  color: #373737
+  display: block
 }
 .checkboxBox-1 {
   margin: 20px 0 0 0
@@ -2227,18 +2215,18 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   display: none
 }
 .radio-input-input:checked + .questionnaire__label::after {
-  color: #373737
+  display: block
 }
 .radioBox-2 {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 20px;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
-  justify-content: flex-start
+  justify-content: flex-start;
+  margin: 23px 0 -20px 0
 }
 .radioBox-2 label {
-  margin: 0 30px 0 0
+  margin: 0 50px 20px 0
 }
 .width-very-small {
   width: 155px
@@ -2248,7 +2236,10 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   text-align: center
 }
 .margin-right-input-small {
-  margin: 23px 40px 0 0
+  margin: 23px 10px 20px 10px
+}
+.block-7 {
+  margin: 30px 0 -20px 0
 }
 .width-oversize {
   width: 636px
@@ -2259,21 +2250,29 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 29px
+  margin: 0 -14.5px -29px -14.5px
 }
 .radio-flexBox-1 label {
-  margin: 0 11px 0 0
+  margin: 0 20px 29px 20px
 }
 .radioBox-5 .radio-title {
   min-width: 308px;
+  margin: 0 40px 0 0
+}
+.block-8 {
+  margin: 30px 0 -20px 0
+}
+.radioBox-6 .questionnaire__label,
+.radioBox-6 .radio-title,
+.radioBox-7 .questionnaire__label,
+.radioBox-7 .radio-title {
   margin: 0 40px 0 0
 }
 .radioBox-6,
 .radioBox-7 {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
-  justify-content: flex-start;
-  gap: 40px
+  justify-content: flex-start
 }
 .radioBox-9 .radio-title {
   min-width: 226px;
@@ -2285,23 +2284,22 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 20px
+  margin: 0 0 -20px 0
 }
 .radio-flexBox-2 label {
-  margin: 0 20px 0 0
+  margin: 0 38px 20px 0
 }
 .wrapper-small-inputs .text-input {
   width: 226px
 }
-.wrapper-small-inputs .text-input input:first-of-type,
-.wrapper-small-inputs .text-input:first-child {
+.wrapper-small-inputs .text-input input:first-of-type {
   margin: 0 20px 0 0
 }
 .wrapper-small-inputs .text-input input:last-of-type {
   width: 72px
 }
 .width-fullsize {
-  margin: 20px 0 0 0
+  margin: 10px 0 0 0
 }
 .other-money__title {
   font-size: 14px;
@@ -2309,14 +2307,14 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   margin: 20px 0 0 0
 }
 .other-money__body {
-  margin: 8px 0 0 0;
+  margin: 8px -10px -10px -10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  gap: 20px
+  flex-wrap: wrap
 }
+.append-input__wrapper,
 .other-money__item {
   -webkit-box-flex: 0;
   -ms-flex: 0 1 472px;
@@ -2329,7 +2327,12 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center
+  align-items: center;
+  margin: 0 10px 20px 10px
+}
+.append-input__wrapper,
+.other-money__item .questionnare__input {
+  margin: 0
 }
 .private-title {
   font-size: 14px;
@@ -2374,8 +2377,19 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 .radioBox-14 {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
-  justify-content: flex-start;
-  gap: 40px
+  justify-content: flex-start
+}
+.radioBox-10 .questionnare__input,
+.radioBox-12 .questionnare__input {
+  margin: 0
+}
+.radioBox-11 .questionnaire__label,
+.radioBox-11 .radio-title,
+.radioBox-13 .questionnaire__label,
+.radioBox-13 .radio-title,
+.radioBox-14 .questionnaire__label,
+.radioBox-14 .radio-title {
+  margin: 0 40px 0 0
 }
 .private-auto__title {
   margin: 0 0 0 25px
@@ -2395,15 +2409,12 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   margin: 0
 }
 .radioBox-15 .questionnaire__label {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 34%;
-  flex: 0 1 34%
+  margin: 0 10px 20px 10px
 }
 .checkboxBox-8 {
   margin: 20px 0 0 0
 }
 .radioBox-16 {
-  gap: 20px;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-pack: start;
@@ -2411,10 +2422,14 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   justify-content: flex-start
 }
 .radioBox-16 .questionnaire__label,
+.radioBox-16 .radio-title,
 .radioBox-17 .questionnaire__label,
+.radioBox-17 .radio-title,
 .radioBox-18 .questionnaire__label,
-.radioBox-19 .questionnaire__label {
-  margin: 0 18px 0 0
+.radioBox-18 .radio-title,
+.radioBox-19 .questionnaire__label,
+.radioBox-19 .radio-title {
+  margin: 0 28px 20px 0
 }
 .actual-credit-2Box,
 .actual-credit-3Box,
@@ -2422,7 +2437,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   margin: 60px 0 0 0
 }
 .add-more-credit {
-  margin: 30px 0 0 0;
+  margin: 10px 0 0 0;
   width: 200px;
   height: 30px;
   border: 1px solid #373737;
@@ -2438,8 +2453,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 .block-15 {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  gap: 20px
+  display: flex
 }
 .drop-area {
   background: #fff;
@@ -2516,7 +2530,6 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 25px;
   margin: 20px 0 0 0;
   padding: 20px
 }
@@ -3324,6 +3337,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     font-size: 16px;
     line-height: 21px
   }
+  .text-input {
+    margin: 0 7.5px 15px 7.5px
+  }
   .text-input input {
     padding: 12px 9.5px
   }
@@ -3334,7 +3350,6 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     display: block
   }
   .inputs__wrapper {
-    gap: 15px;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between
@@ -3362,8 +3377,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
-    gap: 20px
+    justify-content: center
   }
   .button-step {
     width: 144px;
@@ -3375,16 +3389,22 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .button-step.button-prev-step {
     background: #fff;
     color: #000;
-    border: 1px solid #000
+    border: 1px solid #000;
+    margin: 0 20px 0 0
   }
   .button-step.button-first-step {
     width: 315px;
     height: 50px
   }
+  .with-label {
+    margin: 23px 7.5px 15px 7.5px
+  }
+  .questionnaire__label {
+    cursor: pointer
+  }
   .radio-wrapper {
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    gap: 15px
+    flex-wrap: wrap
   }
   .radio-title {
     -webkit-box-flex: 0;
@@ -3392,16 +3412,21 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     flex: 0 1 100%
   }
   .radioBox-1 .questionnaire__label {
-    gap: 15px;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 47%;
-    flex: 0 1 47%
+    flex: 0 1 47%;
+    margin: 0 0 15px 0
+  }
+  .radioBox-1 .radio-title {
+    margin: 0 0 15px 0
+  }
+  .block-5 {
+    margin: 5px 0 0 0
   }
   .radioBox-2 .questionnaire__label {
-    gap: 15px;
     -webkit-box-flex: 0;
-    -ms-flex: 0 1 37%;
-    flex: 0 1 37%
+    -ms-flex: 0 1 29%;
+    flex: 0 1 29%
   }
   .radioBox-2 .flex100-label {
     -webkit-box-flex: 0;
@@ -3409,41 +3434,54 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     flex: 0 1 100%
   }
   .marging-rigth27 {
-    margin: 0 12px 0 0
+    margin: 0 7.5px 15px 7.5px
   }
   .radio-wrapper {
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    gap: 15px
+    flex-wrap: wrap
   }
   .radioBox-3 .questionnaire__label {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 47%;
-    flex: 0 1 47%
+    flex: 0 1 47%;
+    margin: 0 0 15px
   }
   .radioBox-3 .flex100-label {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%
   }
+  .radioBox-4 .radio-title {
+    margin: 0 0 15px 0
+  }
   .radioBox-4 .questionnaire__label {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 47%;
-    flex: 0 1 47%
+    flex: 0 1 47%;
+    margin: 0 0 15px
   }
   .radioBox-4 .flex100-label {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%
   }
-  .block-7 .inputs__wrapper {
-    gap: 5px
-  }
   .margin-right-input-small {
-    margin: 23px 0 0 0
+    margin: 23px 0 15px 0
+  }
+  .block-7 .inputs__wrapper .questionnare__input {
+    margin: 23px 0 15px
+  }
+  .block-7 .inputs__wrapper {
+    margin: 15px 0 0 0
   }
   .radio-flexBox-1 {
-    gap: 15px
+    margin: 0 -7.5px -20px -7.5px
+  }
+  .radioBox-5 .radio-title {
+    margin: 0 0 15px 0
+  }
+  .radio-flexBox-1 label {
+    margin: 0 7.5px 20px 7.5px
   }
   .radio-flexBox-1 .order-1 {
     -webkit-box-ordinal-group: 2;
@@ -3515,15 +3553,39 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     -ms-flex-pack: justify;
     justify-content: space-between
   }
+  .radioBox-6 .questionnaire__label,
+  .radioBox-6 .radio-title,
+  .radioBox-7 .questionnaire__label,
+  .radioBox-7 .radio-title,
+  .radioBox-8 .questionnaire__label,
+  .radioBox-8 .radio-title {
+    margin: 0 30px 15px 0
+  }
+  .block-9 .inputs__wrapper .questionnare__input .text-input__label {
+    top: -35px
+  }
+  .block-9 .inputs__wrapper .questionnare__input .text-input__label2 {
+    top: -25px
+  }
+  .radio-flexBox-2 {
+    margin: 15px 0 -20px 0
+  }
+  .radio-flexBox-2 label {
+    margin: 0 20px 15px 0
+  }
   .wrapper-small-inputs {
-    margin: 45px 0 0 0
+    margin: 35px 0 0 -7.5px
+  }
+  .width-fullsize {
+    margin: 10px 0 0 0
   }
   .block-11 .inputs__wrapper .text-input {
-    margin: 30px 0 0 0
+    margin: 30px 10px 15px
   }
   .block-11 .inputs__wrapper .text-input .text-input__label {
     top: -35px
   }
+  .append-input__wrapper .text-input,
   .other-money__item .text-input {
     max-width: 110px
   }
@@ -3532,8 +3594,16 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     background: #f4f4f4;
     border-radius: 10px
   }
-  .other-money__body {
-    gap: 10px
+  .append-inputBox {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  .append-inputBox .append-input {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    max-width: 708px;
+    margin: 15px 0 0 0
   }
   .radioBox-10 label:first-of-type,
   .radioBox-10 label:nth-of-type(2),
@@ -3545,7 +3615,11 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .radioBox-13 label:nth-of-type(2) {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 43%;
-    flex: 0 1 43%
+    flex: 0 1 43%;
+    margin: 0 0 15px 0
+  }
+  .radioBox-11 .radio-title {
+    margin: 0 0 15px 0
   }
   .radioBox-10 label:nth-of-type(3),
   .radioBox-10 label:nth-of-type(4),
@@ -3557,15 +3631,30 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .radioBox-13 label:nth-of-type(4) {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
-    flex: 0 1 100%
+    flex: 0 1 100%;
+    margin: 0 0 15px 0
   }
-  .private-auto__item .inputs__wrapper .text-input.width-small {
-    width: 130px
-  }
-  .radioBox-14 label {
+  .radioBox-14 .questionnaire__label {
+    margin: 0 0 15px 0;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%
+  }
+  .radioBox-11,
+  .radioBox-13 {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  .radioBox-10 .radio-title,
+  .radioBox-11 .radio-title,
+  .radioBox-12 .radio-title,
+  .radioBox-13 .radio-title,
+  .radioBox-14 .radio-title {
+    margin: 0 0 15px 0
+  }
+  .private-auto__item .inputs__wrapper .text-input.width-small {
+    width: 130px
   }
   .block-13 .inputs__wrapper .text-input:first-of-type,
   .block-13 .inputs__wrapper .text-input:nth-of-type(2) {
@@ -3573,7 +3662,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
   .block-13 .inputs__wrapper .radioBox-15 .text-input,
   .block-13 .inputs__wrapper .radioBox-15 .text-input input {
-    min-width: 100%
+    min-width: 95.5%
   }
   .block-15 {
     display: block;
@@ -3612,9 +3701,12 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 15px;
-    margin: 0;
-    padding: 20px
+    margin: 20px -10px 0;
+    padding: 20px 0 20px
+  }
+  .prev-image {
+    width: 91.666px;
+    margin: 0 10px 15px 10px
   }
 }
 @media (max-width:730px) {
