@@ -2455,6 +2455,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   display: -ms-flexbox;
   display: flex
 }
+.drop-area__wrapper {
+  margin: 0 40px 0 0
+}
 .drop-area {
   background: #fff;
   -webkit-box-shadow: 0 8px 24px rgba(149,157,165,.2);
@@ -3707,6 +3710,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .prev-image {
     width: 91.666px;
     margin: 0 10px 15px 10px
+  }
+  .drop-area__wrapper {
+    margin: 0
   }
 }
 @media (max-width:730px) {
