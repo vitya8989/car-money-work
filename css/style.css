@@ -2525,7 +2525,8 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   font-size: 20px;
   line-height: 23px;
   width: 472px;
-  height: 60px
+  height: 60px;
+  cursor: pointer
 }
 .file-preview {
   display: -webkit-box;
