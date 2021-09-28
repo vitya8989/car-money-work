@@ -1,9 +1,21 @@
 <?
-        $to = 'vitya898989@gmail.com'; 
-        $subject = 'Заявка на автокредит';
-        $message = '
-                <html>
-                    <head>
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+
+$mail = new PHPMailer(true);
+$mail->CharSet = 'UTF-8';
+$mail->setLanguage('ru', 'phpmailer/language/');
+$mail->IsHTML(true);
+
+$mail->setFrom('car-money@car-money.com');
+$mail->addAddress('syndikate96@yandex.ru'); 
+$mail->Subject = 'Готовая анкета на автокредит';
+$body ='<html>
+                  <head>
                         <title>'.$subject.'</title>
 								<style type="text/css">
 									.subtitle { 
@@ -78,7 +90,7 @@
 										<p>Совпадает с адресом постоянной
 											регистрации: '.$_POST['ФП_совпадает'].'</p>
 										<p>Город: '.$_POST['Город_ФП'].'</p>
-										<p>Населенный пункт: '.$_POST['Населенный пункт_ФП'].'</p>
+										<p>Населенный пункт: '.$_POST['Населенный_пункт_ФП'].'</p>
 										<p>Регион: '.$_POST['Регион_ФП'].'</p>
 									</div>
 									<div class="row">
@@ -238,20 +250,27 @@
 										<p>Ежемесячный платеж: '.$_POST['Ежемесячный_платеж_взятого4'].' руб.</p>
 										<p>Просрочки по кредиту: '.$_POST['Просрочки_по_кредиту4'].'</p>
 									</div>
-									<h2 class="subtitle">Согласие с обработкой персональных данных и сканы документов:</h2>
+									<h2 class="subtitle">Согласие с обработкой персональных данных:</h2>
 									<div class="row">
 										<p>Согласие: '.$_POST['Согласие'].'</p>
-									</div>
-									<p class="mini-title">Сканы документов:</p>
-									<div class="row">
-										'.$_POST['files'].'
 									</div>
 								</div>					  		
                     </body>
                 </html>'; 
-        $headers  = "Content-type: text/html; charset=utf-8 \r\n"; 
-        $headers .= ""; 
-        mail($to, $subject, $message, $headers);
+	if (!empty($_FILES['files']['tmp_name'])) {
+		for($ct=0;$ct<count($_FILES['files']['tmp_name']);$ct++){
+				$mail->addAttachment($_FILES['files']['tmp_name'][$ct],$_FILES['files']['name'][$ct]);
+			}
+		}
+	$mail->Body = $body;
+	if (!$mail->send()) {
+		$message = 'Ошибка';
+	} else {
+		$message = 'Данные отправлены';
+	}
+	$response = ['message' => $message];
 
+	header('Content-type: application/json');
+	echo json_encode($response);
 ?>
 

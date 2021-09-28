@@ -233,12 +233,23 @@ if (window.innerWidth < 769) {
 	appendInputBox.appendChild(appendInput);
 	dropAreaWrapper.appendChild(filePreview);
 }
-
+let questionnairePopupWrapper = document.querySelector('.questionnaire-popup__wrapper');
+let questionnairePopupBody = document.querySelector('.questionnaire-popup__body');
 let questionnaireForm = document.querySelector('.questionnaire__form');
 questionnaireForm.onsubmit = async (e) => {
 	e.preventDefault();
+	let formData = new FormData(questionnaireForm);
+	formData.append('files', fileInput.files);
 	let response = await fetch('questionnaire-action.php', {
 		method: 'POST',
-		body: new FormData(questionnaireForm)
+		body: formData
 	});
+	if (response.ok) {
+		questionnaireForm.reset();
+		filePreview.innerHTML = '';
+		questionnairePopupWrapper.classList.add('popup-open');
+		questionnairePopupBody.classList.add('popup-open');
+	} else {
+		alert('Произошла ошибка отправки, попробуйте еще раз!');
+	}
 }
