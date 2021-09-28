@@ -234,4 +234,11 @@ if (window.innerWidth < 769) {
 	dropAreaWrapper.appendChild(filePreview);
 }
 
-
+let questionnaireForm = document.querySelector('.questionnaire__form');
+questionnaireForm.onsubmit = async (e) => {
+	e.preventDefault();
+	let response = await fetch('questionnaire-action.php', {
+		method: 'POST',
+		body: new FormData(questionnaireForm)
+	});
+}
