@@ -3327,7 +3327,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     padding: 40px 0
   }
   .questionnaire__content {
-    padding: 40px 0 20px
+    padding: 20px 0 20px
   }
   .questionnaire__title {
     font-size: 25px;
@@ -3704,15 +3704,22 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin: 20px -10px 0;
+    margin: 10px -10px 0;
     padding: 20px 0 20px
   }
   .prev-image {
-    width: 91.666px;
+    width: 27%;
     margin: 0 10px 15px 10px
   }
   .drop-area__wrapper {
     margin: 0
+  }
+  .close-prev-image {
+    width: 25px;
+    height: 25px;
+    top: -12.5px;
+    right: -12.5px;
+    background: url(../img/icons/crossClose.svg) center/25px 25px no-repeat,#fff
   }
 }
 @media (max-width:730px) {

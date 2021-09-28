@@ -190,12 +190,14 @@ for (let i = 0; i < nextStep.length; i++) {
 		event.preventDefault();
 		questionnaireStep[i].classList.remove('active-step');
 		questionnaireStep[i].nextElementSibling.classList.add('active-step');
+		window.scrollTo(0, 0);
 	}
 	prevStep[i].onclick = function (event) {
 		event.preventDefault();
 		let j = i + 1;
 		questionnaireStep[j].classList.remove('active-step');
 		questionnaireStep[j].previousElementSibling.classList.add('active-step');
+		window.scrollTo(0, 0);
 	}
 }
 
