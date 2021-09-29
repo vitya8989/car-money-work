@@ -2919,6 +2919,38 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 .values__bottom .values-slider {
   display: none
 }
+.give-us {
+  background: #fff
+}
+.give-us__content {
+  padding: 80px 0
+}
+.give-card {
+  background: -o-linear-gradient(359.57deg,#f4f4f4 26.09%,rgba(218,218,218,.89197) 40.54%,rgba(189,189,189,.63) 56.38%,rgba(0,0,0,0) 85.43%),url(../img/give-us-bg.jpg) center/cover no-repeat;
+  background: linear-gradient(90.43deg,#f4f4f4 26.09%,rgba(218,218,218,.89197) 40.54%,rgba(189,189,189,.63) 56.38%,rgba(0,0,0,0) 85.43%),url(../img/give-us-bg.jpg) center/cover no-repeat;
+  border-radius: 10px;
+  min-height: 428px;
+  padding: 80px 64px
+}
+.give-card__title {
+  font-size: 30px;
+  line-height: 39px;
+  font-family: PTSansCaption
+}
+.give-card__btn {
+  margin: 60px 0 0 0;
+  width: 308px;
+  height: 60px
+}
+.give-card__social {
+  margin: 20px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+.give-card__social-button {
+  padding: 15px 16.5px 14px 40px
+}
 @media (max-width:1206px) {
   .special__slider-container {
     margin: 0 auto;
@@ -4161,6 +4193,27 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     line-height: 21px;
     margin: 20px 0 0 0
   }
+  .give-us__content {
+    padding: 40px 0
+  }
+  .give-card {
+    background: -o-linear-gradient(308.34deg,#f4f4f4 15.64%,rgba(218,218,218,.89197) 27.02%,rgba(189,189,189,.63) 45.13%,rgba(0,0,0,0) 69.86%),url(../img/give-us-bg.jpg) center/cover no-repeat;
+    background: linear-gradient(141.66deg,#f4f4f4 15.64%,rgba(218,218,218,.89197) 27.02%,rgba(189,189,189,.63) 45.13%,rgba(0,0,0,0) 69.86%),url(../img/give-us-bg.jpg) center/cover no-repeat;
+    min-height: 428px;
+    padding: 26px 24px 36px 23px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .give-card__title {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto
+  }
 }
 @media (max-width:730px) {
   .item-credit5__content {
@@ -4958,6 +5011,29 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     padding: 10px 17.5px;
     margin: -29px 0 0 0
   }
+  .give-card__title {
+    font-size: 20px;
+    line-height: 30px
+  }
+  .give-card__btn {
+    margin: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    line-height: 19px
+  }
+  .give-card__social {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  .give-card__social .social-button:first-child {
+    margin: 0
+  }
+  .give-card {
+    background: -o-linear-gradient(308.34deg,#f4f4f4 15.64%,rgba(218,218,218,.89197) 27.02%,rgba(189,189,189,.63) 45.13%,rgba(0,0,0,0) 69.86%),url(../img/give-us-bg.jpg) -490px 0/cover no-repeat;
+    background: linear-gradient(141.66deg,#f4f4f4 15.64%,rgba(218,218,218,.89197) 27.02%,rgba(189,189,189,.63) 45.13%,rgba(0,0,0,0) 69.86%),url(../img/give-us-bg.jpg) -490px 0/cover no-repeat
+  }
 }
 .webp .slider-special__slide:first-child {
   background: url(../img/special-bg1.webp) center/cover no-repeat
@@ -4992,6 +5068,12 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 .webp .whatch {
   background: url(../img/what-happend-bg.webp) center/cover no-repeat
 }
+.webp .give-card {
+  background: -o-linear-gradient(359.57deg,#f4f4f4 26.09%,rgba(218,218,218,.89197) 40.54%,rgba(189,189,189,.63) 56.38%,rgba(0,0,0,0) 85.43%),url(../img/give-us-bg.webp) center/cover no-repeat
+}
+.webp .give-card {
+  background: linear-gradient(90.43deg,#f4f4f4 26.09%,rgba(218,218,218,.89197) 40.54%,rgba(189,189,189,.63) 56.38%,rgba(0,0,0,0) 85.43%),url(../img/give-us-bg.webp) center/cover no-repeat
+}
 @media (max-width:1206px) {
   .webp .slider-special__slide:first-child {
     background: url(../img/special-bg-mobile1.webp) center/cover no-repeat
@@ -5017,6 +5099,16 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     background: url(../img/main_bg.webp) center/cover no-repeat
   }
 }
+@media (max-width:768px) {
+  .webp .give-card {
+    background: -o-linear-gradient(308.34deg,#f4f4f4 15.64%,rgba(218,218,218,.89197) 27.02%,rgba(189,189,189,.63) 45.13%,rgba(0,0,0,0) 69.86%),url(../img/give-us-bg.webp) center/cover no-repeat
+  }
+}
+@media (max-width:768px) {
+  .webp .give-card {
+    background: linear-gradient(141.66deg,#f4f4f4 15.64%,rgba(218,218,218,.89197) 27.02%,rgba(189,189,189,.63) 45.13%,rgba(0,0,0,0) 69.86%),url(../img/give-us-bg.webp) center/cover no-repeat
+  }
+}
 @media (max-width:500px) {
   .webp .header__wrapper {
     background: url(../img/mobile_bg.webp) center/cover no-repeat
@@ -5040,5 +5132,15 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 @media (max-width:500px) {
   .webp .item-credit5 {
     background: url(../img/form-bg5-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .give-card {
+    background: -o-linear-gradient(308.34deg,#f4f4f4 15.64%,rgba(218,218,218,.89197) 27.02%,rgba(189,189,189,.63) 45.13%,rgba(0,0,0,0) 69.86%),url(../img/give-us-bg.webp) -490px 0/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .give-card {
+    background: linear-gradient(141.66deg,#f4f4f4 15.64%,rgba(218,218,218,.89197) 27.02%,rgba(189,189,189,.63) 45.13%,rgba(0,0,0,0) 69.86%),url(../img/give-us-bg.webp) -490px 0/cover no-repeat
   }
 }
