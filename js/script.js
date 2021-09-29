@@ -304,6 +304,7 @@ form.onsubmit = async (e) => {
 		nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
 	}
 	startTimer();
+	checkCheck();
 }
 
 const FULL_DASH_ARRAY = 283;
@@ -322,7 +323,7 @@ const COLOR_CODES = {
 		threshold: ALERT_THRESHOLD
 	}
 };
-const TIME_LIMIT = 13;
+const TIME_LIMIT = 24;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -365,8 +366,8 @@ function startTimer() {
 		if (timeLeft === 0) {
 			onTimesUp();
 			form.reset();
-			itemCredit4.classList.remove('active-credit');
-			itemCredit5.classList.add('active-credit');
+			// itemCredit4.classList.remove('active-credit');
+			// itemCredit5.classList.add('active-credit');
 		}
 	}, 1000);
 }
@@ -408,6 +409,20 @@ function setCircleDasharray() {
 		.getElementById("base-timer-path-remaining")
 		.setAttribute("stroke-dasharray", circleDasharray);
 }
+
+let checkText = document.querySelectorAll('.check-text');
+function checkCheck() {
+	for (let i = 0; i < checkText.length; i++) {
+		setTimeout(function () {
+			checkText[i].classList.add('load-check');
+			setTimeout(function () {
+				checkText[i].classList.remove('load-check');
+				checkText[i].classList.add('check-check');
+			}, 7500);
+		}, 8000 * i);
+	}
+}
+
 
 let message = document.querySelectorAll('.speak__message');
 let speak = document.querySelector('.speak');

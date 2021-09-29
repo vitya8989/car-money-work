@@ -1580,6 +1580,38 @@ body {
 .bold-text {
   font-weight: 400
 }
+.item-credit4__bottom {
+  margin: 40px 0 0 0
+}
+.check-text {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 10px 0 10px 40px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(24px);
+  -ms-transform: translateY(24px);
+  transform: translateY(24px);
+  -webkit-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s
+}
+.check-text.load-check {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  background: url(../img/icons/load.gif) 0 center/30px 30px no-repeat
+}
+.check-text.check-check {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  background: url(../img/icons/check-check.png) 0 center/30px 30px no-repeat
+}
 .item-credit5 {
   background: url(../img/form-bg5.jpg) center/cover no-repeat
 }
@@ -3869,6 +3901,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     max-width: 400px;
     margin: 0 auto
   }
+  .item-credit4__bottom {
+    margin: 20px 0 0 0
+  }
   .speak__content {
     padding: 40px 0
   }
@@ -4928,7 +4963,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     margin: 40px 0 0 0
   }
   .item-credit4 {
-    background: url(../img/form-bg4-mobile.png) 0 95%/contain no-repeat;
+    background: url(../img/form-bg4-mobile.png) 0 113%/contain no-repeat;
     background-color: #fbfcfd
   }
   .item-credit4__timer {
@@ -4938,13 +4973,21 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     padding: 3px 0
   }
   .item-credit4__text-Wrapper {
-    margin: 45px 0 0 0
+    margin: 15px 0 0 0
   }
   .item__credit4__text {
     line-height: 22px
   }
   .item__credit4__text:last-child {
     margin: 20px 0 0 0
+  }
+  .item-credit4__bottom {
+    margin: 10px 0 0 0
+  }
+  .check-text {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 5px 0 5px 40px
   }
   .item-credit5 {
     background: url(../img/form-bg5-mobile.jpg) center/cover no-repeat
@@ -5331,6 +5374,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 .webp .item-credit4 {
   background: url(../img/form-bg4.webp) center/cover no-repeat
 }
+.webp .check-text.check-check {
+  background: url(../img/icons/check-check.webp) 0 center/30px 30px no-repeat
+}
 .webp .item-credit5 {
   background: url(../img/form-bg5.webp) center/cover no-repeat
 }
@@ -5406,7 +5452,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 }
 @media (max-width:500px) {
   .webp .item-credit4 {
-    background: url(../img/form-bg4-mobile.webp) 0 95%/contain no-repeat
+    background: url(../img/form-bg4-mobile.webp) 0 113%/contain no-repeat
   }
 }
 @media (max-width:500px) {

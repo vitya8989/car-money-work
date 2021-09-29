@@ -1,6 +1,6 @@
 <?
 if((isset($_POST['name']))&&(isset($_POST['telephone']))){ 
-        $to = 'vitya898989@gmail.com, syndikate96@yandex.ru'; 
+        $to = 'syndikate96@yandex.ru'; 
         $subject = 'Заявка на автокредит';
         $message = '
                 <html>
