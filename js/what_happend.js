@@ -91,6 +91,10 @@ for (let i = 0; i < changeTask.length; i++) {
 	}
 }
 
+new Swiper('.values-slider', {
+	slidesPerView: 'auto',
+});
+
 new Swiper('.instagram-slider', {
 	slidesPerView: 'auto',
 });
