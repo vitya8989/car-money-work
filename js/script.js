@@ -366,8 +366,8 @@ function startTimer() {
 		if (timeLeft === 0) {
 			onTimesUp();
 			form.reset();
-			// itemCredit4.classList.remove('active-credit');
-			// itemCredit5.classList.add('active-credit');
+			 itemCredit4.classList.remove('active-credit');
+			 itemCredit5.classList.add('active-credit');
 		}
 	}, 1000);
 }
