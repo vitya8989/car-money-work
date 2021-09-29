@@ -477,7 +477,7 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
 
 		const scrollTarget = document.getElementById(href);
 
-		let topOffset = document.querySelector('.nav__content').offsetHeight;
+		let topOffset = document.querySelector('.nav__container').offsetHeight;
 
 		const elementPosition = scrollTarget.getBoundingClientRect().top;
 		const offsetPosition = elementPosition - topOffset;

@@ -617,7 +617,7 @@ body {
   line-height: 39px;
   font-family: PTSansCaption
 }
-.comparison__title a {
+.comparison__title span {
   color: #5753c9
 }
 .comparison__slider-wrapper {
@@ -1838,14 +1838,16 @@ body {
   display: block;
   width: 18px;
   height: 9px;
-  padding: 3px;
   background: url(../img/icons/faq-arrow.svg) center/cover no-repeat;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
   -webkit-transition: all .3s ease 0s;
   -o-transition: all .3s ease 0s;
-  transition: all .3s ease 0s
+  transition: all .3s ease 0s;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 18px;
+  flex: 0 0 18px
 }
 .question__button.rotate {
   -webkit-transform: rotate(0);
@@ -2689,7 +2691,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 .questions__answer.life-stories__questions__answer ul {
   padding: 0 0 0 27px
 }
-.questions__answer.life-stories__questions__answer ul li::before {
+.questions__answer.life-stories__questions__answer ul li::after {
+  position: absolute;
+  content: "";
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -2703,6 +2707,19 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   box-sizing: border-box;
   -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.25);
   box-shadow: 0 2px 2px rgba(0,0,0,.25)
+}
+.questions__answer.life-stories__questions__answer ul li::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: calc(100% + 27px);
+  background: #373737;
+  top: 16px;
+  left: -23px;
+  border-radius: 0
+}
+.questions__answer.life-stories__questions__answer ul li:last-of-type:before {
+  display: none
 }
 .task__top {
   padding: 13px 22px 14px 23px;
@@ -2729,7 +2746,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   font-size: 16px;
   line-height: 27px;
   font-weight: 500;
-  padding: 0 35px 0 50px;
+  padding: 0 35px 0 55px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2755,13 +2772,13 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   transition: all .3s ease 0s
 }
 .task__btn.active-change::before {
-  left: 317px
+  left: 318px
 }
 .task__btn span {
   z-index: 2
 }
 .task__btn span:first-child {
-  margin: 0 85px 0 0
+  margin: 0 88px 0 0
 }
 .task__events-wrapper {
   display: none
@@ -2771,17 +2788,7 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 }
 .task__events {
   max-width: 636px;
-  margin: 32px auto 0;
-  position: relative
-}
-.task__events::before {
-  position: absolute;
-  content: "";
-  width: 2px;
-  height: 322px;
-  background: #373737;
-  top: 16px;
-  left: 4px
+  margin: 32px auto 0
 }
 .task__events li {
   margin: 0 0 27px
@@ -3403,6 +3410,11 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     margin: 44px 0 0 0
   }
 }
+@media (max-width:781px) {
+  .life-stories__questions__answer {
+    padding: 0 20px
+  }
+}
 @media (max-width:768px) {
   .autocredit__content {
     padding: 0 0 40px 0
@@ -3957,6 +3969,28 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
   .whatch__content {
     padding: 40px 0
+  }
+  .life-stories__content {
+    padding: 40px 0
+  }
+  .task__btn {
+    max-width: 315px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    padding: 0 5px 0 14px
+  }
+  .task__btn::before {
+    width: 157.5px
+  }
+  .task__btn.active-change::before {
+    left: 157.5px
+  }
+  .task__btn span {
+    text-align: center
+  }
+  .task__btn span:first-child {
+    margin: 0 15px 0 0
   }
 }
 @media (max-width:730px) {
@@ -4581,6 +4615,13 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     padding: 0 20px 19px 20px;
     margin: -5px 0 0 0
   }
+  .question__button {
+    width: 12px;
+    height: 6px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 12px;
+    flex: 0 0 12px
+  }
   .instagram__title {
     font-size: 20px;
     line-height: 30px;
@@ -4695,6 +4736,45 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .whatch__btn::before {
     top: 15px;
     left: 50px
+  }
+  .task__result-title,
+  .task__title {
+    font-size: 16px;
+    line-height: 24px
+  }
+  .life-stories__title {
+    font-size: 20px;
+    line-height: 30px
+  }
+  .questions__answer.life-stories__questions__answer p {
+    margin: 8px 0 0 0
+  }
+  .questions__answer.life-stories__questions__answer p,
+  .questions__answer.life-stories__questions__answer ul li {
+    font-size: 14px;
+    line-height: 22px
+  }
+  .task__btn {
+    max-width: 275px;
+    font-size: 12px;
+    line-height: 17px;
+    font-weight: 400;
+    padding: 0 3px 0 14px
+  }
+  .task__btn::before {
+    width: 137.5px
+  }
+  .task__btn.active-change::before {
+    left: 137.5px
+  }
+  .task__btn span:first-child {
+    margin: 0 15px 0 0
+  }
+  .questions__wrapper.life-stories__questions-wrapper {
+    margin: 0 0 10px 0
+  }
+  .questions__question.life-stories__question p {
+    padding: 11px 20px
   }
 }
 .webp .slider-special__slide:first-child {

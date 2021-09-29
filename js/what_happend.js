@@ -39,7 +39,7 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
 
 		const scrollTarget = document.getElementById(href);
 
-		let topOffset = document.querySelector('.nav__content').offsetHeight;
+		let topOffset = document.querySelector('.nav__container').offsetHeight;
 
 		const elementPosition = scrollTarget.getBoundingClientRect().top;
 		const offsetPosition = elementPosition - topOffset;
@@ -85,6 +85,9 @@ for (let i = 0; i < changeTask.length; i++) {
 		changeTask[i].classList.toggle('active-change');
 		taskEventswrapper1[i].classList.toggle('active-task');
 		taskEventswrapper2[i].classList.toggle('active-task');
+		if (changeTask[i].parentNode.parentNode.parentNode.classList.contains('opened')) {
+			changeTask[i].parentNode.parentNode.parentNode.style.maxHeight = changeTask[i].parentNode.parentNode.parentNode.scrollHeight + 'px';
+		}
 	}
 }
 
