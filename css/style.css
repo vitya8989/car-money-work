@@ -2117,7 +2117,7 @@ body {
 }
 .video-vidget video {
   width: 100%;
-  height: 100%;
+  height: 101%;
   -o-object-fit: cover;
   object-fit: cover
 }

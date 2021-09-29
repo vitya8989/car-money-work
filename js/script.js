@@ -533,7 +533,6 @@ let videoVidgetVideo = document.querySelector('.video-vidget__video');
 let closeVideoVidget = document.querySelector('.close-video-vidget');
 let rollUpVideoVidget = document.querySelector('.roll-up-video-vidget');
 let videoVidgetBtn = document.querySelector('.video-vidget__btn');
-videoVidgetVideo.muted = true;
 
 rollUpVideoVidget.onclick = function () {
 	closeVideoVidget.classList.remove('big-video');
