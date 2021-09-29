@@ -2840,13 +2840,28 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   margin: -42px 0 0 0
 }
 .values-top__signature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 18px;
   line-height: 24px;
   font-family: PTSansCaption;
-  padding: 3px 40px 3px 0;
   margin: 20px 0 0 0;
-  background: url(../img/icons/insta-pic.svg) right/30px 30px no-repeat;
   max-width: 198px
+}
+.values-top__signature-img {
+  width: 30px;
+  height: 30px;
+  margin: 0 0 0 10px
+}
+.values-top__signature-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .values-top__subsignature {
   margin: 20px 0 0 0;
@@ -4107,6 +4122,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
   .task__btn span:first-child {
     margin: 0 15px 0 0
+  }
+  .values {
+    overflow: hidden
   }
   .values-bottom__flex {
     display: none

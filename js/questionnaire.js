@@ -30,6 +30,26 @@ for (let i = 0; i < navLink.length; i++) {
 	}
 }
 
+document.querySelectorAll('a[href^="#"').forEach(link => {
+
+	link.addEventListener('click', function (e) {
+		e.preventDefault();
+
+		let href = this.getAttribute('href').substring(1);
+
+		const scrollTarget = document.getElementById(href);
+
+		let topOffset = document.querySelector('.nav__container').offsetHeight;
+
+		const elementPosition = scrollTarget.getBoundingClientRect().top;
+		const offsetPosition = elementPosition - topOffset;
+		window.scrollBy({
+			top: offsetPosition,
+			behavior: 'smooth'
+		});
+	});
+});
+
 new Swiper('.instagram-slider', {
 	slidesPerView: 'auto',
 });
