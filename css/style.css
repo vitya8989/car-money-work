@@ -3105,6 +3105,14 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   color: #fff;
   margin: 15px 0 0 0
 }
+.calc__container {
+  margin: 0 auto;
+  max-width: 964px;
+  padding: 0 30px
+}
+.calc__content {
+  padding: 80px 0
+}
 @media (max-width:1206px) {
   .special__slider-container {
     margin: 0 auto;
@@ -4425,6 +4433,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end
+  }
+  .calc__content {
+    padding: 40px 0
   }
 }
 @media (max-width:730px) {
