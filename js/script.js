@@ -629,6 +629,8 @@ setInterval(() => {
 	}
 }, 1000);
 
+let carsSelect1 = document.querySelector('.cars-select1');
+let carsSelect2 = document.querySelector('.cars-select2');
 let requestURL = '../car-money-work/base/cars.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
@@ -637,4 +639,15 @@ request.send();
 request.onload = function () {
 	let cars = request.response;
 	console.log(cars);
+}
+
+function buildSelect1(obj) {
+	for (const key in obj.list) {
+		if (Object.hasOwnProperty.call(obj.list, key)) {
+			const car = obj.list[key];
+			let option = document.createElement('option');
+			option.innerHTML = car;
+			carsSelect1.appendChild(option);
+		}
+	}
 }
