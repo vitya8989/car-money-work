@@ -234,6 +234,32 @@ body {
   padding: 80px 0 0 0;
   position: relative
 }
+.header__wrapper.audi {
+  background: url(../img/cars/audi-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.bmw {
+  background: url(../img/cars/bmw-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.cadillac {
+  background: url(../img/cars/cadillac-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.ford {
+  background: url(../img/cars/ford-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.honda {
+  background: url(../img/cars/honda-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.hyundai {
+  background: url(../img/cars/hyundai-bg.jpg) center/cover no-repeat;
+  min-height: 580px;
+  padding: 49px 0 0 0
+}
+.header__wrapper.infinity {
+  background: url(../img/cars/infinity-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.hyundai.kia {
+  background: url(../img/cars/kia-bg.jpg) center/cover no-repeat
+}
 .header__bg,
 .stories__bg {
   position: absolute;
@@ -274,12 +300,43 @@ body {
   color: #fff;
   text-shadow: -1px -1px 29px rgba(214,255,255,.13),3px 3px 50px rgba(255,255,255,.5)
 }
+.header__title.bmw {
+  color: #000
+}
+.header__title.honda {
+  color: #fff;
+  text-align: center
+}
+.header__title.infinity {
+  color: #373737;
+  text-align: right;
+  margin: 64px 0 0 0
+}
 .header__subtitle {
   margin: 10px 0 0 0;
   font-size: 20px;
   line-height: 30px;
   color: #fff;
   text-shadow: -1px -1px 29px rgba(214,255,255,.13),3px 3px 50px rgba(255,255,255,.5)
+}
+.header__subtitle.bmw,
+.header__subtitle.hyundai {
+  color: #373737
+}
+.header__subtitle.honda {
+  color: #373737;
+  text-align: center
+}
+.header__subtitle.infinity {
+  color: #373737;
+  text-align: right
+}
+.header__subtitle.kia {
+  color: #373737
+}
+.header__title.kia {
+  color: #373737;
+  margin: 49px 0 0 0
 }
 .offer__content {
   background: #fff;
@@ -300,6 +357,9 @@ body {
   position: relative;
   z-index: 2;
   bottom: -53px
+}
+.offer__content.hyundai {
+  bottom: -164px
 }
 .offer__title {
   font-weight: 500;
@@ -3466,6 +3526,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     padding: 10px 20px 20px;
     bottom: -128.5px
   }
+  .offer__content.hyundai {
+    bottom: -239.5px
+  }
   .offer__item {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 50%;
@@ -3589,6 +3652,12 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
   .header__bg {
     display: none
+  }
+  .header__title.infinity {
+    margin: 0
+  }
+  .header__title.kia {
+    margin: 0
   }
   .stories__bg {
     display: none
@@ -3993,6 +4062,12 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
 }
 @media (max-width:768px) {
+  .header__wrapper {
+    padding: 40px 0 0 0
+  }
+  .header__wrapper.hyundai {
+    padding: 40px 0 0 0
+  }
   .autocredit__content {
     padding: 0 0 40px 0
   }
@@ -4811,6 +4886,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .offer__content {
     bottom: -169px
   }
+  .offer__content.hyundai {
+    bottom: -240px
+  }
   .offer__item {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
@@ -4849,10 +4927,34 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
 }
 @media (max-width:500px) {
+  .header__wrapper.audi {
+    background: url(../img/cars/audi-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.bmw {
+    background: url(../img/cars/bmw-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.cadillac {
+    background: url(../img/cars/cadillac-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.ford {
+    background: url(../img/cars/ford-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.honda {
+    background: url(../img/cars/honda-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.hyundai {
+    background: url(../img/cars/hyundai-bg-mobile.jpg) center/cover no-repeat;
+    min-height: 513px
+  }
+  .header__wrapper.infinity {
+    background: url(../img/cars/infinity-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.hyundai.kia {
+    background: url(../img/cars/kia-bg-mobile.jpg) center/cover no-repeat
+  }
   .header__wrapper {
     min-height: 513px;
-    background: url(../img/mobile_bg.jpg) center/cover no-repeat;
-    padding: 40px 0 0 0
+    background: url(../img/mobile_bg.jpg) center/cover no-repeat
   }
   .header__container {
     display: -webkit-box;
@@ -4874,10 +4976,26 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     font-weight: 300;
     margin: 20px 0 0 0
   }
+  .header__title.honda {
+    text-align: left
+  }
+  .header__subtitle.honda {
+    text-align: left
+  }
+  .header__subtitle.hyundai {
+    color: #fff
+  }
+  .header__subtitle.infinity,
+  .header__title.infinity {
+    text-align: left
+  }
   .main {
     padding: 159.5px 0 0 0
   }
   .offer__content {
+    bottom: -129.5px
+  }
+  .offer__content.hyundai {
     bottom: -129.5px
   }
   .offer__item {
@@ -5635,6 +5753,30 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     height: 50px
   }
 }
+.webp .header__wrapper.audi {
+  background: url(../img/cars/audi-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.bmw {
+  background: url(../img/cars/bmw-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.cadillac {
+  background: url(../img/cars/cadillac-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.ford {
+  background: url(../img/cars/ford-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.honda {
+  background: url(../img/cars/honda-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.hyundai {
+  background: url(../img/cars/hyundai-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.infinity {
+  background: url(../img/cars/infinity-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.hyundai.kia {
+  background: url(../img/cars/kia-bg.webp) center/cover no-repeat
+}
 .webp .slider-special__slide:first-child {
   background: url(../img/special-bg1.webp) center/cover no-repeat
 }
@@ -5718,6 +5860,46 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 @media (max-width:768px) {
   .webp .give-card {
     background: linear-gradient(141.66deg,#f4f4f4 15.64%,rgba(218,218,218,.89197) 27.02%,rgba(189,189,189,.63) 45.13%,rgba(0,0,0,0) 69.86%),url(../img/give-us-bg.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.audi {
+    background: url(../img/cars/audi-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.bmw {
+    background: url(../img/cars/bmw-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.cadillac {
+    background: url(../img/cars/cadillac-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.ford {
+    background: url(../img/cars/ford-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.honda {
+    background: url(../img/cars/honda-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.hyundai {
+    background: url(../img/cars/hyundai-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.infinity {
+    background: url(../img/cars/infinity-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.hyundai.kia {
+    background: url(../img/cars/kia-bg-mobile.webp) center/cover no-repeat
   }
 }
 @media (max-width:500px) {
