@@ -658,6 +658,7 @@ function buildSelect2() {
 	request.send();
 	request.onload = function () {
 		let cars = request.response;
+		carsSelect2.innerHTML = '<option disabled selected hidden>Выберите марку</option>';
 		for (const key in cars.list) {
 			const car = key;
 			if (carsSelect1.value == car) {
