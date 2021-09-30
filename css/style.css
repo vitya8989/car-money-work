@@ -260,6 +260,54 @@ body {
 .header__wrapper.hyundai.kia {
   background: url(../img/cars/kia-bg.jpg) center/cover no-repeat
 }
+.header__wrapper.rover {
+  background: url(../img/cars/land-rover-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.lexus {
+  background: url(../img/cars/lexus-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.mazda {
+  background: url(../img/cars/mazda-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.mersedes {
+  background: url(../img/cars/mersedes-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.nissan {
+  background: url(../img/cars/nissan-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.mitsubishi {
+  background: url(../img/cars/mitsubishi-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.opel {
+  background: url(../img/cars/opel-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.porsche {
+  background: url(../img/cars/porsche-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.renault {
+  background: url(../img/cars/renault-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.suzuki {
+  background: url(../img/cars/suzuki-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.skoda {
+  background: url(../img/cars/skoda-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.subaru {
+  background: url(../img/cars/subaru-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.volvo {
+  background: url(../img/cars/volvo-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.toyota {
+  background: url(../img/cars/toyota-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.volkswagen {
+  background: url(../img/cars/volkswagen-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.lada {
+  background: url(../img/cars/lada-bg.jpg) center/cover no-repeat
+}
 .header__bg,
 .stories__bg {
   position: absolute;
@@ -337,6 +385,16 @@ body {
 .header__title.kia {
   color: #373737;
   margin: 49px 0 0 0
+}
+.header__title.kia.toyota {
+  color: #373737;
+  margin: 0
+}
+.header__title.lada {
+  color: #000
+}
+.header__title.opel {
+  color: #373737
 }
 .offer__content {
   background: #fff;
@@ -4068,6 +4126,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .header__wrapper.hyundai {
     padding: 40px 0 0 0
   }
+  .offer__content {
+    bottom: -168.5px
+  }
   .autocredit__content {
     padding: 0 0 40px 0
   }
@@ -4952,6 +5013,54 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .header__wrapper.hyundai.kia {
     background: url(../img/cars/kia-bg-mobile.jpg) center/cover no-repeat
   }
+  .header__wrapper.rover {
+    background: url(../img/cars/land-rover-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.lexus {
+    background: url(../img/cars/lexus-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.mazda {
+    background: url(../img/cars/mazda-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.mersedes {
+    background: url(../img/cars/mersedes-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.nissan {
+    background: url(../img/cars/nissan-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.mitsubishi {
+    background: url(../img/cars/mitsubishi-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.opel {
+    background: url(../img/cars/opel-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.porsche {
+    background: url(../img/cars/porsche-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.renault {
+    background: url(../img/cars/renault-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.suzuki {
+    background: url(../img/cars/suzuki-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.skoda {
+    background: url(../img/cars/skoda-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.subaru {
+    background: url(../img/cars/subaru-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.volvo {
+    background: url(../img/cars/volvo-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.toyota {
+    background: url(../img/cars/toyota-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.volkswagen {
+    background: url(../img/cars/volkswagen-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.lada {
+    background: url(../img/cars/lada-bg-mobile.jpg) center/cover no-repeat
+  }
   .header__wrapper {
     min-height: 513px;
     background: url(../img/mobile_bg.jpg) center/cover no-repeat
@@ -4988,6 +5097,13 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .header__subtitle.infinity,
   .header__title.infinity {
     text-align: left
+  }
+  .header__subtitle.nissan,
+  .header__title.nissan {
+    color: #000
+  }
+  .header__title.opel {
+    color: #000
   }
   .main {
     padding: 159.5px 0 0 0
@@ -5777,6 +5893,54 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 .webp .header__wrapper.hyundai.kia {
   background: url(../img/cars/kia-bg.webp) center/cover no-repeat
 }
+.webp .header__wrapper.rover {
+  background: url(../img/cars/land-rover-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.lexus {
+  background: url(../img/cars/lexus-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.mazda {
+  background: url(../img/cars/mazda-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.mersedes {
+  background: url(../img/cars/mersedes-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.nissan {
+  background: url(../img/cars/nissan-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.mitsubishi {
+  background: url(../img/cars/mitsubishi-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.opel {
+  background: url(../img/cars/opel-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.porsche {
+  background: url(../img/cars/porsche-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.renault {
+  background: url(../img/cars/renault-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.suzuki {
+  background: url(../img/cars/suzuki-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.skoda {
+  background: url(../img/cars/skoda-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.subaru {
+  background: url(../img/cars/subaru-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.volvo {
+  background: url(../img/cars/volvo-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.toyota {
+  background: url(../img/cars/toyota-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.volkswagen {
+  background: url(../img/cars/volkswagen-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.lada {
+  background: url(../img/cars/lada-bg.webp) center/cover no-repeat
+}
 .webp .slider-special__slide:first-child {
   background: url(../img/special-bg1.webp) center/cover no-repeat
 }
@@ -5900,6 +6064,86 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 @media (max-width:500px) {
   .webp .header__wrapper.hyundai.kia {
     background: url(../img/cars/kia-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.rover {
+    background: url(../img/cars/land-rover-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.lexus {
+    background: url(../img/cars/lexus-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.mazda {
+    background: url(../img/cars/mazda-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.mersedes {
+    background: url(../img/cars/mersedes-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.nissan {
+    background: url(../img/cars/nissan-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.mitsubishi {
+    background: url(../img/cars/mitsubishi-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.opel {
+    background: url(../img/cars/opel-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.porsche {
+    background: url(../img/cars/porsche-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.renault {
+    background: url(../img/cars/renault-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.suzuki {
+    background: url(../img/cars/suzuki-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.skoda {
+    background: url(../img/cars/skoda-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.subaru {
+    background: url(../img/cars/subaru-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.volvo {
+    background: url(../img/cars/volvo-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.toyota {
+    background: url(../img/cars/toyota-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.volkswagen {
+    background: url(../img/cars/volkswagen-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.lada {
+    background: url(../img/cars/lada-bg-mobile.webp) center/cover no-repeat
   }
 }
 @media (max-width:500px) {

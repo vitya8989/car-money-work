@@ -631,7 +631,7 @@ setInterval(() => {
 
 let carsSelect1 = document.querySelector('.cars-select1');
 let carsSelect2 = document.querySelector('.cars-select2');
-let requestURL = '../car-money-work/base/cars.json';
+let requestURL = '../base/cars.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -658,12 +658,11 @@ function buildSelect2() {
 	request.send();
 	request.onload = function () {
 		let cars = request.response;
-		carsSelect2.innerHTML = '<option disabled selected hidden>Выберите марку</option>';
+		carsSelect2.innerHTML = '<option disabled selected hidden>Выберите модель</option>';
 		for (const key in cars.list) {
 			const car = key;
 			if (carsSelect1.value == car) {
 				const models = cars.list[car];
-				console.log(models);
 				for (let i = 0; i < models.length; i++) {
 					const model = models[i];
 					let option = document.createElement('option');
