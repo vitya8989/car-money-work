@@ -644,7 +644,7 @@ request.onload = function () {
 function buildSelect1(obj) {
 	for (const key in obj.list) {
 		if (Object.hasOwnProperty.call(obj.list, key)) {
-			const car = obj.list[key];
+			const car = key;
 			car.toString();
 			let option = document.createElement('option');
 			option.innerHTML = car;
