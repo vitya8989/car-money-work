@@ -226,6 +226,9 @@ toFirstBtn.onclick = function (e) {
 	e.preventDefault();
 	itemCredit2.classList.remove('active-credit');
 	itemCredit1.classList.add('active-credit');
+	window.scrollBy({
+		top: itemCredit1.getBoundingClientRect().top - 75
+	});
 }
 for (let i = 0; i < toSecondBtn.length; i++) {
 	toSecondBtn[i].onclick = function (e) {
@@ -234,6 +237,9 @@ for (let i = 0; i < toSecondBtn.length; i++) {
 			itemCredit1.classList.remove('active-credit');
 			itemCredit3.classList.remove('active-credit');
 			itemCredit2.classList.add('active-credit');
+			window.scrollBy({
+				top: itemCredit2.getBoundingClientRect().top - 75
+			});
 		} else {
 			formNextBox.classList.add('disabled-btn');
 		}
@@ -247,6 +253,9 @@ toThirdBtn.onclick = function (e) {
 	e.preventDefault();
 	itemCredit2.classList.remove('active-credit');
 	itemCredit3.classList.add('active-credit');
+	window.scrollBy({
+		top: itemCredit3.getBoundingClientRect().top - 75
+	});
 }
 
 function setCursorPosition(pos, elem) {
@@ -303,6 +312,9 @@ form.onsubmit = async (e) => {
 	for (let i = 0; i < nameOutput.length; i++) {
 		nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
 	}
+	window.scrollBy({
+		top: itemCredit4.getBoundingClientRect().top - 75
+	});
 	startTimer();
 	checkCheck();
 }
@@ -368,6 +380,9 @@ function startTimer() {
 			form.reset();
 			itemCredit4.classList.remove('active-credit');
 			itemCredit5.classList.add('active-credit');
+			window.scrollBy({
+				top: itemCredit5.getBoundingClientRect().top - 75
+			});
 		}
 	}, 1000);
 }
@@ -533,6 +548,8 @@ let videoVidgetVideo = document.querySelector('.video-vidget__video');
 let closeVideoVidget = document.querySelector('.close-video-vidget');
 let rollUpVideoVidget = document.querySelector('.roll-up-video-vidget');
 let videoVidgetBtn = document.querySelector('.video-vidget__btn');
+
+videoVidgetVideo.controls = false;
 
 rollUpVideoVidget.onclick = function () {
 	closeVideoVidget.classList.remove('big-video');

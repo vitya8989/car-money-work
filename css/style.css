@@ -2122,6 +2122,18 @@ body {
   -o-object-fit: cover;
   object-fit: cover
 }
+.video-vidget video::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none
+}
+.video-vidget video::-webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none
+}
+.video-vidget video::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none
+}
 .video-vidget.big-video {
   width: 400px;
   height: 500px
