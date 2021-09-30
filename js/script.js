@@ -548,9 +548,13 @@ let videoVidgetVideo = document.querySelector('.video-vidget__video');
 let closeVideoVidget = document.querySelector('.close-video-vidget');
 let rollUpVideoVidget = document.querySelector('.roll-up-video-vidget');
 let videoVidgetBtn = document.querySelector('.video-vidget__btn');
+let invisibleWrapper = document.querySelector('.invisible-wrapper');
 
-videoVidgetVideo.controls = false;
-
+videoVidgetVideo.muted = true;
+videoVidgetVideo.play();
+videoVidgetVideo.onclick = function (event) {
+	event.preventDefault();
+}
 rollUpVideoVidget.onclick = function () {
 	closeVideoVidget.classList.remove('big-video');
 	videoVidget.classList.remove('big-video');
@@ -558,12 +562,13 @@ rollUpVideoVidget.onclick = function () {
 	videoVidgetBtn.classList.remove('big-video');
 	videoVidgetVideo.muted = true;
 }
-videoVidgetVideo.onclick = function (event) {
+invisibleWrapper.onclick = function () {
 	videoVidget.classList.add('big-video');
 	rollUpVideoVidget.classList.add('big-video');
 	closeVideoVidget.classList.add('big-video');
 	videoVidgetBtn.classList.add('big-video');
 	videoVidgetVideo.muted = false;
+	videoVidgetVideo.play();
 }
 closeVideoVidget.onclick = function () {
 	videoVidget.classList.add('none-video');
@@ -575,3 +580,51 @@ videoVidgetBtn.onclick = function () {
 	videoVidgetBtn.classList.remove('big-video');
 	videoVidgetVideo.muted = true;
 }
+
+let openVideoComparison = document.querySelector('.open-video-comparison');
+let videoComparison = document.querySelector('.video-comparison');
+let closeVideoComparison = document.querySelector('.close-video-comparison');
+let videoComparisonVideo = document.querySelector('.video-comparison__video');
+let videoComparisonBtn = document.querySelector('.video-comparison__btn');
+
+videoComparisonBtn.onclick = function () {
+	videoComparison.classList.add('hide-video');
+	videoComparisonVideo.pause();
+	videoComparisonVideo.currentTime = 0;
+}
+openVideoComparison.onclick = function (event) {
+	event.preventDefault();
+	videoComparison.classList.remove('hide-video');
+	videoComparisonVideo.play();
+}
+closeVideoComparison.onclick = function () {
+	videoComparison.classList.add('hide-video');
+	videoComparisonVideo.pause();
+	videoComparisonVideo.currentTime = 0;
+}
+setInterval(() => {
+	if (videoComparisonVideo.ended) {
+		videoComparison.classList.add('hide-video');
+	}
+}, 1000);
+
+let openVideoCredit = document.querySelector('.open-video-credit');
+let videoCredit = document.querySelector('.video-credit');
+let closeVideoCredit = document.querySelector('.close-video-credit');
+let videoCreditVideo = document.querySelector('.video-credit__video');
+
+openVideoCredit.onclick = function (event) {
+	event.preventDefault();
+	videoCredit.classList.remove('hide-video');
+	videoCreditVideo.play();
+}
+closeVideoCredit.onclick = function () {
+	videoCredit.classList.add('hide-video');
+	videoCreditVideo.pause();
+	videoCreditVideo.currentTime = 0;
+}
+setInterval(() => {
+	if (videoCreditVideo.ended) {
+		videoCredit.classList.add('hide-video');
+	}
+}, 1000);

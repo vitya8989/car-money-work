@@ -2138,15 +2138,21 @@ body {
   width: 400px;
   height: 500px
 }
+.close-video-comparison,
+.close-video-credit,
 .close-video-vidget {
   position: absolute;
   width: 30px;
   height: 30px;
   top: 5px;
   right: 5px;
-  z-index: 101;
+  z-index: 105;
   cursor: pointer
 }
+.close-video-comparison::after,
+.close-video-comparison::before,
+.close-video-credit::after,
+.close-video-credit::before,
 .close-video-vidget::after,
 .close-video-vidget::before {
   position: absolute;
@@ -2156,12 +2162,16 @@ body {
   background: #fff;
   top: 50%
 }
+.close-video-comparison::before,
+.close-video-credit::before,
 .close-video-vidget::before {
   left: 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg)
 }
+.close-video-comparison::after,
+.close-video-credit::after,
 .close-video-vidget::after {
   left: 0;
   -webkit-transform: rotate(-45deg);
@@ -2178,7 +2188,7 @@ body {
   height: 30px;
   top: 5px;
   right: 15px;
-  z-index: 101;
+  z-index: 105;
   cursor: pointer
 }
 .roll-up-video-vidget::before {
@@ -2215,9 +2225,65 @@ body {
   -webkit-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  z-index: 101;
+  z-index: 105;
   width: 308px;
   height: 60px
+}
+.invisible-wrapper {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: 0 0;
+  z-index: 101
+}
+.video-comparison,
+.video-credit {
+  background: #000;
+  position: fixed;
+  width: 500px;
+  height: 700px;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  z-index: 110;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%)
+}
+.video-comparison.hide-video,
+.video-credit.hide-video {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -100
+}
+.video-comparison__btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 308px;
+  height: 60px
+}
+.video-comparison__video,
+.video-credit__video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .questionnaire-popup__wrapper {
   position: fixed;
@@ -3516,32 +3582,6 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     width: 350px;
     height: 430px
   }
-  .video-vidget__btn {
-    -webkit-transform: translate(-50%,500px);
-    -ms-transform: translate(-50%,500px);
-    transform: translate(-50%,500px);
-    opacity: 0;
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    -webkit-transition: all .1s ease 0s;
-    -o-transition: all .1s ease 0s;
-    transition: all .1s ease 0s;
-    visibility: hidden
-  }
-  .video-vidget__btn.big-video {
-    visibility: visible;
-    opacity: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-transform: translate(-50%,0);
-    -ms-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    z-index: 101;
-    width: 308px;
-    height: 60px
-  }
 }
 @media (max-width:1023px) {
   .header__wrapper {
@@ -3982,9 +4022,14 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     position: relative;
     max-width: 1002px
   }
-  .autocredit__btn,
-  .benefits__btn {
-    margin: 20px auto 0
+  .autocredit__btnBox,
+  .benefits__btnBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
   }
   .benefits__content {
     padding: 40px 0 36px
@@ -4793,6 +4838,16 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     max-width: 400px
   }
 }
+@media (max-width:570px) {
+  .video-comparison,
+  .video-credit {
+    width: 350px;
+    height: 500px
+  }
+  .video-comparison__btn {
+    bottom: 20px
+  }
+}
 @media (max-width:500px) {
   .header__wrapper {
     min-height: 513px;
@@ -5370,6 +5425,20 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .footer__adress {
     margin: 20px 0 0 0
   }
+  .close-video-comparison,
+  .close-video-credit {
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 5px
+  }
+  .close-video-comparison::after,
+  .close-video-comparison::before,
+  .close-video-credit::after,
+  .close-video-credit::before {
+    width: 20px;
+    height: 2px
+  }
   .video-vidget {
     width: 100px;
     height: 140px;
@@ -5553,6 +5622,17 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .attract-right__text {
     line-height: 27px;
     margin: 15px 0 0 0
+  }
+}
+@media (max-width:430px) {
+  .video-comparison,
+  .video-credit {
+    width: 315px;
+    height: 400px
+  }
+  .video-comparison__btn {
+    width: 275px;
+    height: 50px
   }
 }
 .webp .slider-special__slide:first-child {
