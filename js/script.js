@@ -638,16 +638,18 @@ request.responseType = 'json';
 request.send();
 request.onload = function () {
 	let cars = request.response;
-	console.log(cars);
+	buildSelect1(cars);
 }
 
 function buildSelect1(obj) {
 	for (const key in obj.list) {
 		if (Object.hasOwnProperty.call(obj.list, key)) {
 			const car = obj.list[key];
+			car.toString();
 			let option = document.createElement('option');
 			option.innerHTML = car;
 			carsSelect1.appendChild(option);
+			console.log(car);
 		}
 	}
 }
