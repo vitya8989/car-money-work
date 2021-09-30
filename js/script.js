@@ -629,7 +629,7 @@ setInterval(() => {
 	}
 }, 1000);
 
-let requestURL = '../base/cars.json';
+let requestURL = '../car-money-work/base/cars.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
