@@ -2098,6 +2098,7 @@ body {
   margin: 0 33px 0 0
 }
 .video-vidget {
+  background: #ccc;
   position: fixed;
   width: 200px;
   height: 250px;

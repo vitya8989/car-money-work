@@ -552,5 +552,9 @@ closeVideoVidget.onclick = function () {
 	videoVidget.classList.add('none-video');
 }
 videoVidgetBtn.onclick = function () {
-	videoVidget.classList.add('none-video');
+	closeVideoVidget.classList.remove('big-video');
+	videoVidget.classList.remove('big-video');
+	rollUpVideoVidget.classList.remove('big-video');
+	videoVidgetBtn.classList.remove('big-video');
+	videoVidgetVideo.muted = true;
 }
