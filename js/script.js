@@ -639,10 +639,7 @@ request.send();
 request.onload = function () {
 	let cars = request.response;
 	buildSelect1(cars);
-	return cars;
 }
-
-carsSelect1
 
 function buildSelect1(obj) {
 	for (const key in obj.list) {
@@ -656,16 +653,22 @@ function buildSelect1(obj) {
 	}
 }
 function buildSelect2() {
-	for (const key in cars.list) {
-		const car = key;
-		if (carsSelect1.value == car) {
-			const models = cars.list[car];
-			console.log(models);
-			for (let i = 0; i < models.length; i++) {
-				const model = models[i];
-				let option = document.createElement('option');
-				option.innerHTML = model;
-				carsSelect2.appendChild(option);
+	request.open('GET', requestURL);
+	request.responseType = 'json';
+	request.send();
+	request.onload = function () {
+		let cars = request.response;
+		for (const key in cars.list) {
+			const car = key;
+			if (carsSelect1.value == car) {
+				const models = cars.list[car];
+				console.log(models);
+				for (let i = 0; i < models.length; i++) {
+					const model = models[i];
+					let option = document.createElement('option');
+					option.innerHTML = model;
+					carsSelect2.appendChild(option);
+				}
 			}
 		}
 	}
