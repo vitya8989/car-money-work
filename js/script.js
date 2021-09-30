@@ -628,3 +628,13 @@ setInterval(() => {
 		videoCredit.classList.add('hide-video');
 	}
 }, 1000);
+
+let requestURL = '../base/cars.json';
+let request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function () {
+	let cars = request.response;
+	console.log(cars);
+}
