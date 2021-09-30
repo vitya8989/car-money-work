@@ -639,7 +639,24 @@ request.send();
 request.onload = function () {
 	let cars = request.response;
 	buildSelect1(cars);
+	function buildSelect2() {
+		for (const key in cars.list) {
+			const car = key;
+			if (carsSelect1.value == car) {
+				const models = cars.list[car];
+				console.log(models);
+				for (let i = 0; i < models.length; i++) {
+					const model = models[i];
+					let option = document.createElement('option');
+					option.innerHTML = model;
+					carsSelect2.appendChild(option);
+				}
+			}
+		}
+	}
 }
+
+carsSelect1
 
 function buildSelect1(obj) {
 	for (const key in obj.list) {
@@ -649,22 +666,6 @@ function buildSelect1(obj) {
 			let option = document.createElement('option');
 			option.innerHTML = car;
 			carsSelect1.appendChild(option);
-		}
-	}
-}
-function buildSelect2(cars) {
-	for (const key in cars.list) {
-		const car = key;
-		car.toString();
-		if (carsSelect1.value == car) {
-			const models = cars.list[car];
-			console.log(models);
-			for (let i = 0; i < models.length; i++) {
-				const model = models[i];
-				let option = document.createElement('option');
-				option.innerHTML = model;
-				carsSelect2.appendChild(option);
-			}
 		}
 	}
 }
