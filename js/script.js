@@ -652,7 +652,7 @@ function buildSelect1(obj) {
 		}
 	}
 }
-function buildSelect2() {
+function buildSelect2(cars) {
 	for (const key in cars.list) {
 		const car = key;
 		car.toString();
