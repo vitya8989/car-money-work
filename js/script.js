@@ -649,7 +649,22 @@ function buildSelect1(obj) {
 			let option = document.createElement('option');
 			option.innerHTML = car;
 			carsSelect1.appendChild(option);
-			console.log(car);
+		}
+	}
+}
+function buildSelect2() {
+	for (const key in cars.list) {
+		const car = key;
+		car.toString();
+		if (carsSelect1.value == car) {
+			const models = cars.list[car];
+			console.log(models);
+			for (let i = 0; i < models.length; i++) {
+				const model = models[i];
+				let option = document.createElement('option');
+				option.innerHTML = model;
+				carsSelect2.appendChild(option);
+			}
 		}
 	}
 }
