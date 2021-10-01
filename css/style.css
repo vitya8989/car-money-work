@@ -308,6 +308,18 @@ body {
 .header__wrapper.lada {
   background: url(../img/cars/lada-bg.jpg) center/cover no-repeat
 }
+.header__wrapper.new-auto-diler {
+  background: url(../img/new-diler-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.used-auto-diler {
+  background: url(../img/used-diler-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.used-auto-private {
+  background: url(../img/used-private-bg.jpg) center/cover no-repeat
+}
+.header__wrapper.commer_trans {
+  background: url(../img/comm-tr-bg.jpg) center/cover no-repeat
+}
 .header__bg,
 .stories__bg {
   position: absolute;
@@ -393,8 +405,62 @@ body {
 .header__title.lada {
   color: #000
 }
+.header__title.commer_trans {
+  color: #000
+}
 .header__title.opel {
+  color: #000
+}
+.specials-pages__items {
+  margin: 20px 0 0 0;
+  max-width: 676px;
+  padding: 14px 20px 13px;
+  background: rgba(0,0,0,.19);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+.specials-pages__items.used-auto-diler {
+  background: rgba(255,255,255,.39)
+}
+.specials-pages__items.used-auto-private {
+  background: rgba(255,255,255,.32)
+}
+.specials-pages__items.commer_trans {
+  background: rgba(255,255,255,.32)
+}
+.special-pages__item {
+  margin: 0 20px 0 0
+}
+.special-pages__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 33px;
+  color: #fff
+}
+.special-pages__text.used-auto-diler,
+.special-pages__title.used-auto-diler {
   color: #373737
+}
+.special-pages__text.commer_trans,
+.special-pages__title.commer_trans {
+  color: #373737
+}
+.special-pages__text.used-auto-private,
+.special-pages__title.used-auto-private {
+  color: #000
+}
+.special-pages__text {
+  font-size: 20px;
+  line-height: 27px;
+  color: #fff;
+  margin: 5px 0 0 0
 }
 .offer__content {
   background: #fff;
@@ -1930,6 +1996,86 @@ body {
   -ms-flex-item-align: start;
   align-self: start;
   padding: 0
+}
+.help {
+  background: url(../img/help-bg.png) center/cover no-repeat
+}
+.help__content {
+  padding: 70px 0
+}
+.help__body {
+  padding: 40px 62px 40px;
+  background: -webkit-gradient(linear,left top,right top,from(rgba(255,254,255,.11)),to(rgba(215,255,254,.11)));
+  background: -o-linear-gradient(left,rgba(255,254,255,.11) 0,rgba(215,255,254,.11) 100%);
+  background: linear-gradient(90deg,rgba(255,254,255,.11) 0,rgba(215,255,254,.11) 100%);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  position: relative
+}
+.help__title {
+  max-width: 650px;
+  font-family: PTSansCaption;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  color: #fff;
+  text-shadow: -1px -1px 30px rgba(180,255,255,.38),3px 3px 50px rgba(255,255,255,.5)
+}
+.help__subtitle {
+  margin: 20px 0 0 0
+}
+.help__list-title,
+.help__subtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: PTSansCaption;
+  color: #e8e8e8
+}
+.help__image {
+  position: absolute;
+  width: 335px;
+  height: 223px;
+  top: 90px;
+  right: 62px
+}
+.help__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.help__list-title {
+  margin: 32px 0 0 0
+}
+.help__list {
+  margin: 10px 0 0 0;
+  padding: 0 0 0 25px
+}
+.help__list li {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 27px;
+  color: #e8e8e8;
+  position: relative
+}
+.help__list li::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  top: 8.5px;
+  left: -25px
+}
+.help__linkBox {
+  margin: 32px 0 0 0
+}
+.help__link {
+  width: 308px;
+  height: 60px
 }
 .faq {
   background: #fff
@@ -4036,6 +4182,15 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     padding: 5px 10px 5px 20px;
     width: 298px
   }
+  .help__body {
+    padding: 40px 30px 40px
+  }
+  .help__image {
+    top: 120px;
+    right: 30px;
+    width: 279px;
+    height: 185px
+  }
   .partners__slider {
     max-width: 660px
   }
@@ -4125,6 +4280,42 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
   .header__wrapper.hyundai {
     padding: 40px 0 0 0
+  }
+  .specials-pages__items {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 370px
+  }
+  .special-pages__item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 28%;
+    flex: 0 1 28%;
+    margin: 0 5px 0 0
+  }
+  .special-pages__item:nth-child(3) {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 35%;
+    flex: 0 1 35%
+  }
+  .special-pages__item:last-child {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    margin: 15px 0 0 0
+  }
+  .specials-pages__items.used-auto-diler {
+    background: rgba(0,0,0,.19)
+  }
+  .special-pages__text.used-auto-diler,
+  .special-pages__title.used-auto-diler {
+    color: #fff
+  }
+  .special-pages__text.commer_trans,
+  .special-pages__title.commer_trans {
+    color: #000
+  }
+  .header__title.commer_trans {
+    color: #fff
   }
   .offer__content {
     bottom: -168.5px
@@ -4265,6 +4456,38 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
   .banks__content {
     padding: 40px 0
+  }
+  .help__content {
+    padding: 40px 0
+  }
+  .help__body {
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+  .help__title {
+    text-align: center
+  }
+  .help__subtitle {
+    margin: 15px 0 0 0
+  }
+  .help__image {
+    position: static;
+    margin: 15px 0 0 0
+  }
+  .help__list-title {
+    margin: 15px 0 0 0
+  }
+  .help__linkBox {
+    margin: 15px 0 0 0
   }
   .faq__content {
     padding: 40px 0
@@ -5061,6 +5284,18 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .header__wrapper.lada {
     background: url(../img/cars/lada-bg-mobile.jpg) center/cover no-repeat
   }
+  .header__wrapper.new-auto-diler {
+    background: url(../img/new-diler-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.used-auto-diler {
+    background: url(../img/used-diler-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.used-auto-private {
+    background: url(../img/used-private-bg-mobile.jpg) center/cover no-repeat
+  }
+  .header__wrapper.commer_trans {
+    background: url(../img/comm-tr-bg-mobile.jpg) center/cover no-repeat
+  }
   .header__wrapper {
     min-height: 513px;
     background: url(../img/mobile_bg.jpg) center/cover no-repeat
@@ -5104,6 +5339,13 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
   .header__title.opel {
     color: #000
+  }
+  .special-pages__title {
+    font-size: 18px
+  }
+  .special-pages__text {
+    font-size: 18px;
+    margin: 5px 0 0 0
   }
   .main {
     padding: 159.5px 0 0 0
@@ -5560,6 +5802,39 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .speak__message {
     width: 255px
   }
+  .help {
+    background: url(../img/help-bg-mobile.png) center/cover no-repeat
+  }
+  .help__body {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+  }
+  .help__title {
+    text-align: left;
+    font-size: 24px;
+    line-height: 30px
+  }
+  .help__subtitle {
+    font-size: 18px;
+    line-height: 21px
+  }
+  .help__list-title {
+    font-size: 18px;
+    line-height: 21px
+  }
+  .help__list li {
+    font-size: 14px;
+    line-height: 30px
+  }
+  .help__link {
+    width: 275px;
+    height: 50px
+  }
+  .help__linkBox {
+    -ms-flex-item-align: center;
+    align-self: center
+  }
   .faq__title {
     font-size: 20px;
     line-height: 30px
@@ -5941,6 +6216,18 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 .webp .header__wrapper.lada {
   background: url(../img/cars/lada-bg.webp) center/cover no-repeat
 }
+.webp .header__wrapper.new-auto-diler {
+  background: url(../img/new-diler-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.used-auto-diler {
+  background: url(../img/used-diler-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.used-auto-private {
+  background: url(../img/used-private-bg.webp) center/cover no-repeat
+}
+.webp .header__wrapper.commer_trans {
+  background: url(../img/comm-tr-bg.webp) center/cover no-repeat
+}
 .webp .slider-special__slide:first-child {
   background: url(../img/special-bg1.webp) center/cover no-repeat
 }
@@ -5970,6 +6257,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 }
 .webp .item-credit5 {
   background: url(../img/form-bg5.webp) center/cover no-repeat
+}
+.webp .help {
+  background: url(../img/help-bg.webp) center/cover no-repeat
 }
 .webp .map {
   background: url(../img/map.webp) center/cover no-repeat
@@ -6147,6 +6437,26 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   }
 }
 @media (max-width:500px) {
+  .webp .header__wrapper.new-auto-diler {
+    background: url(../img/new-diler-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.used-auto-diler {
+    background: url(../img/used-diler-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.used-auto-private {
+    background: url(../img/used-private-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .header__wrapper.commer_trans {
+    background: url(../img/comm-tr-bg-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
   .webp .header__wrapper {
     background: url(../img/mobile_bg.webp) center/cover no-repeat
   }
@@ -6169,6 +6479,11 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 @media (max-width:500px) {
   .webp .item-credit5 {
     background: url(../img/form-bg5-mobile.webp) center/cover no-repeat
+  }
+}
+@media (max-width:500px) {
+  .webp .help {
+    background: url(../img/help-bg-mobile.webp) center/cover no-repeat
   }
 }
 @media (max-width:500px) {
