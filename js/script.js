@@ -629,6 +629,27 @@ setInterval(() => {
 	}
 }, 1000);
 
+let openVideoHelp = document.querySelector('.open-help-video');
+let videoHelp = document.querySelector('.video-help');
+let closeVideoHelp = document.querySelector('.close-video-help');
+let videoHelpVideo = document.querySelector('.video-help__video');
+
+openVideoHelp.onclick = function (event) {
+	event.preventDefault();
+	videoHelp.classList.remove('hide-video');
+	videoHelpVideo.play();
+}
+closeVideoHelp.onclick = function () {
+	videoHelp.classList.add('hide-video');
+	videoHelpVideo.pause();
+	videoHelpVideo.currentTime = 0;
+}
+setInterval(() => {
+	if (videoHelpVideo.ended) {
+		videoHelp.classList.add('hide-video');
+	}
+}, 1000);
+
 let carsSelect1 = document.querySelector('.cars-select1');
 let carsSelect2 = document.querySelector('.cars-select2');
 let requestURL = '../base/cars.json';

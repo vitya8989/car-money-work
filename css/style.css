@@ -2077,6 +2077,25 @@ body {
   width: 308px;
   height: 60px
 }
+.help__video-btn {
+  position: absolute;
+  bottom: -35px;
+  left: -40px;
+  width: 100px;
+  height: 80px;
+  cursor: pointer;
+  z-index: 2
+}
+.help-image__subtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: PTSansCaption;
+  color: #e8e8e8;
+  position: absolute;
+  right: 62px;
+  bottom: 60px
+}
 .faq {
   background: #fff
 }
@@ -2404,6 +2423,7 @@ body {
 }
 .close-video-comparison,
 .close-video-credit,
+.close-video-help,
 .close-video-vidget {
   position: absolute;
   width: 30px;
@@ -2417,6 +2437,8 @@ body {
 .close-video-comparison::before,
 .close-video-credit::after,
 .close-video-credit::before,
+.close-video-help::after,
+.close-video-help::before,
 .close-video-vidget::after,
 .close-video-vidget::before {
   position: absolute;
@@ -2428,6 +2450,7 @@ body {
 }
 .close-video-comparison::before,
 .close-video-credit::before,
+.close-video-help::before,
 .close-video-vidget::before {
   left: 0;
   -webkit-transform: rotate(45deg);
@@ -2436,6 +2459,7 @@ body {
 }
 .close-video-comparison::after,
 .close-video-credit::after,
+.close-video-help::after,
 .close-video-vidget::after {
   left: 0;
   -webkit-transform: rotate(-45deg);
@@ -2503,7 +2527,8 @@ body {
   z-index: 101
 }
 .video-comparison,
-.video-credit {
+.video-credit,
+.video-help {
   background: #000;
   position: fixed;
   width: 500px;
@@ -2524,7 +2549,8 @@ body {
   transform: translate(-50%,-50%)
 }
 .video-comparison.hide-video,
-.video-credit.hide-video {
+.video-credit.hide-video,
+.video-help.hide-video {
   opacity: 0;
   visibility: hidden;
   z-index: -100
@@ -2543,7 +2569,8 @@ body {
   height: 60px
 }
 .video-comparison__video,
-.video-credit__video {
+.video-credit__video,
+.video-help__video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -4480,14 +4507,20 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     margin: 15px 0 0 0
   }
   .help__image {
-    position: static;
+    position: relative;
+    top: auto;
+    right: auto;
     margin: 15px 0 0 0
   }
   .help__list-title {
-    margin: 15px 0 0 0
+    margin: 25px 0 0 0
   }
   .help__linkBox {
     margin: 15px 0 0 0
+  }
+  .help-image__subtitle {
+    position: static;
+    margin: 35px 0 0 0
   }
   .faq__content {
     padding: 40px 0
@@ -5202,7 +5235,8 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 }
 @media (max-width:570px) {
   .video-comparison,
-  .video-credit {
+  .video-credit,
+  .video-help {
     width: 350px;
     height: 500px
   }
@@ -5835,6 +5869,16 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     -ms-flex-item-align: center;
     align-self: center
   }
+  .help__video-btn {
+    bottom: -25px;
+    right: -15px;
+    left: auto
+  }
+  .help-image__subtitle {
+    font-size: 18px;
+    line-height: 21px;
+    margin: 30px 0 0 0
+  }
   .faq__title {
     font-size: 20px;
     line-height: 30px
@@ -5935,7 +5979,8 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     margin: 20px 0 0 0
   }
   .close-video-comparison,
-  .close-video-credit {
+  .close-video-credit,
+  .close-video-help {
     width: 20px;
     height: 20px;
     top: 5px;
@@ -5944,7 +5989,9 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .close-video-comparison::after,
   .close-video-comparison::before,
   .close-video-credit::after,
-  .close-video-credit::before {
+  .close-video-credit::before,
+  .close-video-help::after,
+  .close-video-help::before {
     width: 20px;
     height: 2px
   }
@@ -6135,7 +6182,8 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 }
 @media (max-width:430px) {
   .video-comparison,
-  .video-credit {
+  .video-credit,
+  .video-help {
     width: 315px;
     height: 400px
   }

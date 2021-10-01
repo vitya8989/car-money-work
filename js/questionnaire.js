@@ -259,8 +259,12 @@ let questionnaireForm = document.querySelector('.questionnaire__form');
 questionnaireForm.onsubmit = async (e) => {
 	e.preventDefault();
 	let formData = new FormData(questionnaireForm);
-	formData.append('files', fileInput.files);
-	let response = await fetch('questionnaire-action.php', {
+	let questionnaireActionName = 'questionnaire-action-no-file.php';
+	if (fileInput.files.length > 0) {
+		formData.append('files', fileInput.files);
+		questionnaireActionName = 'questionnaire-action.php';
+	}
+	let response = await fetch(questionnaireActionName, {
 		method: 'POST',
 		body: formData
 	});
