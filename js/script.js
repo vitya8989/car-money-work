@@ -299,24 +299,45 @@ for (let i = 0; i < formNumbersOnly.length; i++) {
 	}
 }
 
+let politicCheck = document.getElementById('politic-check');
+let labelPolitic = document.querySelector('.label-politic');
+
+function validatecheck() {
+	let valid = false;
+	if (politicCheck.checked) {
+		valid = true;
+	}
+	return valid;
+};
 
 let form = document.querySelector('.credit-form__form');
 form.onsubmit = async (e) => {
 	e.preventDefault();
-	let response = await fetch('form-action.php', {
-		method: 'POST',
-		body: new FormData(form)
-	});
-	itemCredit3.classList.remove('active-credit');
-	itemCredit4.classList.add('active-credit');
-	for (let i = 0; i < nameOutput.length; i++) {
-		nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
+	if (validatecheck()) {
+		let response = await fetch('form-action.php', {
+			method: 'POST',
+			body: new FormData(form)
+		});
+		if (response.ok) {
+			itemCredit3.classList.remove('active-credit');
+			itemCredit4.classList.add('active-credit');
+			for (let i = 0; i < nameOutput.length; i++) {
+				nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
+			}
+			window.scrollBy({
+				top: itemCredit4.getBoundingClientRect().top - 75
+			});
+			startTimer();
+			checkCheck();
+		} else {
+			alert('Произошла ошибка отправки, попробуйте еще раз!');
+		}
+	} else {
+		labelPolitic.classList.add('error-check');
 	}
-	window.scrollBy({
-		top: itemCredit4.getBoundingClientRect().top - 75
-	});
-	startTimer();
-	checkCheck();
+}
+labelPolitic.onclick = function () {
+	labelPolitic.classList.remove('error-check');
 }
 
 const FULL_DASH_ARRAY = 283;

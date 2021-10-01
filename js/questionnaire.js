@@ -256,24 +256,41 @@ if (window.innerWidth < 769) {
 let questionnairePopupWrapper = document.querySelector('.questionnaire-popup__wrapper');
 let questionnairePopupBody = document.querySelector('.questionnaire-popup__body');
 let questionnaireForm = document.querySelector('.questionnaire__form');
+
+let checkAgree = document.getElementById('check-9');
+let labelAgree = document.querySelector('.label-check-9');
+function validateQuestionnaire() {
+	let valid = false;
+	if (checkAgree.checked) {
+		valid = true;
+	}
+	return valid;
+};
 questionnaireForm.onsubmit = async (e) => {
 	e.preventDefault();
-	let formData = new FormData(questionnaireForm);
-	let questionnaireActionName = 'questionnaire-action-no-file.php';
-	if (fileInput.files.length > 0) {
-		formData.append('files', fileInput.files);
-		questionnaireActionName = 'questionnaire-action.php';
-	}
-	let response = await fetch(questionnaireActionName, {
-		method: 'POST',
-		body: formData
-	});
-	if (response.ok) {
-		questionnaireForm.reset();
-		filePreview.innerHTML = '';
-		questionnairePopupWrapper.classList.add('popup-open');
-		questionnairePopupBody.classList.add('popup-open');
+	if (validateQuestionnaire()) {
+		let formData = new FormData(questionnaireForm);
+		let questionnaireActionName = 'questionnaire-action-no-file.php';
+		if (fileInput.files.length > 0) {
+			formData.append('files', fileInput.files);
+			questionnaireActionName = 'questionnaire-action.php';
+		}
+		let response = await fetch(questionnaireActionName, {
+			method: 'POST',
+			body: formData
+		});
+		if (response.ok) {
+			questionnaireForm.reset();
+			filePreview.innerHTML = '';
+			questionnairePopupWrapper.classList.add('popup-open');
+			questionnairePopupBody.classList.add('popup-open');
+		} else {
+			alert('Произошла ошибка отправки, попробуйте еще раз!');
+		}
 	} else {
-		alert('Произошла ошибка отправки, попробуйте еще раз!');
+		labelAgree.classList.add('error-check');
 	}
+}
+labelAgree.onclick = function () {
+	labelAgree.classList.remove('error-check');
 }

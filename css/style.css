@@ -1662,6 +1662,11 @@ body {
   border-radius: 5px;
   top: -1px
 }
+.label-politic.error-check::before {
+  border: 3px solid red;
+  -webkit-box-shadow: 0 0 10px 6px red;
+  box-shadow: 0 0 10px 6px red
+}
 .label-politic::after {
   content: "";
   top: -1px;
@@ -3083,6 +3088,11 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 }
 .label-check-9 {
   color: #373737
+}
+.label-check-9.error-check::before {
+  border: 3px solid red;
+  -webkit-box-shadow: 0 0 10px 6px red;
+  box-shadow: 0 0 10px 6px red
 }
 .questionnaire__submit {
   margin: 20px 0 0 0
@@ -5195,6 +5205,19 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .item-credit2 {
     background: #fff
   }
+  .questionnaire-popup__body {
+    width: 400px;
+    height: auto;
+    padding: 20px
+  }
+  .questionnaire-popup__link {
+    width: 308px;
+    height: 60px;
+    margin: 30px auto 0
+  }
+  .questionnaire-popup__text {
+    margin: 0
+  }
 }
 @media (max-width:620px) {
   .main {
@@ -5890,10 +5913,16 @@ input[type=checkbox]:checked + .questionnaire__label::after {
     font-size: 16px;
     padding: 20px
   }
+  .questions__answer ul li {
+    font-size: 14px
+  }
   .questions__answer p {
     font-size: 14px;
     padding: 0 20px 19px 20px;
     margin: -5px 0 0 0
+  }
+  .questions__answer ul {
+    padding: 0 20px 19px 20px
   }
   .question__button {
     width: 12px;
@@ -6012,6 +6041,20 @@ input[type=checkbox]:checked + .questionnaire__label::after {
   .video-vidget__btn.big-video {
     width: 160px;
     height: 50px
+  }
+  .questionnaire-popup__body {
+    width: 315px;
+    height: auto;
+    padding: 20px
+  }
+  .questionnaire-popup__text {
+    font-size: 20px;
+    line-height: 30px
+  }
+  .questionnaire-popup__link {
+    width: 275px;
+    height: 50px;
+    margin: 20px auto 0
   }
   .whatch {
     min-height: 510px

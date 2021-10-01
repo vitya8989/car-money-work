@@ -1,9 +1,19 @@
 <?
-if((isset($_POST['name']))&&(isset($_POST['telephone']))){ 
-        $to = 'syndikate96@yandex.ru'; 
-        $subject = 'Заявка на автокредит';
-        $message = '
-                <html>
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+
+$mail = new PHPMailer(true);
+$mail->CharSet = 'UTF-8';
+$mail->setLanguage('ru', 'phpmailer/language/');
+$mail->IsHTML(true);
+
+$mail->setFrom('car-money@car-money.com');
+$mail->addAddress('syndikate96@yandex.ru'); 
+$mail->Subject = 'Заявка на автокредит';
+        $body = '<html>
                     <head>
                         <title>'.$subject.'</title>
                     </head>
@@ -23,9 +33,15 @@ if((isset($_POST['name']))&&(isset($_POST['telephone']))){
 								<p>Согласие на обработку данных: '.$_POST['politic'].'</p>
                     </body>
                 </html>'; 
-        $headers  = "Content-type: text/html; charset=utf-8 \r\n"; 
-        $headers .= "syndikate96@yandex.ru"; 
-        mail($to, $subject, $message, $headers);
-}
+        $mail->Body = $body;
+	if (!$mail->send()) {
+		$message = 'Ошибка';
+	} else {
+		$message = 'Данные отправлены';
+	}
+	$response = ['message' => $message];
+
+	header('Content-type: application/json');
+	echo json_encode($response);
 ?>
 
