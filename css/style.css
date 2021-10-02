@@ -2319,7 +2319,6 @@ body {
 .map {
   width: 472px;
   height: 300px;
-  background: url(../img/map.jpg) center/cover no-repeat;
   -webkit-box-shadow: 0 4px 4px rgba(0,0,0,.25);
   box-shadow: 0 4px 4px rgba(0,0,0,.25);
   border-radius: 10px;
@@ -6351,9 +6350,6 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 }
 .webp .help {
   background: url(../img/help-bg.webp) center/cover no-repeat
-}
-.webp .map {
-  background: url(../img/map.webp) center/cover no-repeat
 }
 .webp .whatch {
   background: url(../img/what-happend-bg.webp) center/cover no-repeat

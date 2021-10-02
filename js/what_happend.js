@@ -99,24 +99,24 @@ new Swiper('.instagram-slider', {
 	slidesPerView: 'auto',
 });
 
-// let scriptMap = document.createElement('script');
-// scriptMap.src = 'https://api-maps.yandex.ru/2.1/?apikey=&lang=ru_RU';
-// setTimeout(() => document.head.append(scriptMap), 2000);
-// scriptMap.onload = function () {
-// 	ymaps.ready(init);
-// };
+let scriptMap = document.createElement('script');
+scriptMap.src = 'https://api-maps.yandex.ru/2.1/?apikey=dd0f5e76-e8bb-42be-b558-f7af3b491cd2&lang=ru_RU';
+setTimeout(() => document.head.append(scriptMap), 2000);
+scriptMap.onload = function () {
+	ymaps.ready(init);
+};
 
-// function init() {
-// 	var myMap = new ymaps.Map("map", {
-// 		center: [55.752648, 37.603846],
-// 		zoom: 17
-// 	});
-// 	var placemark = new ymaps.Placemark([55.752648, 37.603846], {
-// 		iconColor: 'blue'
-// 	}
-// 	);
-// 	myMap.geoObjects.add(placemark);
-// }
+function init() {
+	var myMap = new ymaps.Map("map", {
+		center: [55.752648, 37.603846],
+		zoom: 17
+	});
+	var placemark = new ymaps.Placemark([55.752648, 37.603846], {
+		iconColor: 'blue'
+	}
+	);
+	myMap.geoObjects.add(placemark);
+}
 
 let footerMap = document.querySelector('.footer__map');
 let footerBottom = document.querySelector('.footer__bottom');
