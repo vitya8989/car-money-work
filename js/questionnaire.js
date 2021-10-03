@@ -126,14 +126,31 @@ for (let i = 0; i < onlyNumber.length; i++) {
 	});
 }
 
-
-// function validate_form() {
-// 	let valid = true;
-// 	if (telMask.value == "+7(___)___-____") {
-// 		valid = false;
-// 	}
-// 	return valid;
-// };
+let sumAuto = document.querySelector('.summ-auto');
+let sumFirstPay = document.querySelector('.summ-first-pay');
+let sumCredit = document.querySelector('.summ-credit');
+sumAuto.oninput = function () {
+	sumCredit.value = Number.parseInt(sumAuto.value) - Number.parseInt(sumFirstPay.value);
+	if (!sumAuto.value) {
+		sumCredit.value = 'Сумма';
+	} else if (!sumFirstPay.value) {
+		sumCredit.value = sumAuto.value;
+	}
+	if (sumCredit.value < 0) {
+		sumCredit.value = 0;
+	}
+}
+sumFirstPay.oninput = function () {
+	sumCredit.value = Number.parseInt(sumAuto.value) - Number.parseInt(sumFirstPay.value);
+	if (!sumAuto.value) {
+		sumCredit.value = 'Сумма';
+	} else if (!sumFirstPay.value) {
+		sumCredit.value = sumAuto.value;
+	}
+	if (sumCredit.value < 0) {
+		sumCredit.value = 0;
+	}
+}
 
 let fileInput = document.getElementById('fileElem');
 let dropArea = document.getElementById('drop-area');
