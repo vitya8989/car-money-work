@@ -318,20 +318,16 @@ form.onsubmit = async (e) => {
 			method: 'POST',
 			body: new FormData(form)
 		});
-		if (response.ok) {
-			itemCredit3.classList.remove('active-credit');
-			itemCredit4.classList.add('active-credit');
-			for (let i = 0; i < nameOutput.length; i++) {
-				nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
-			}
-			window.scrollBy({
-				top: itemCredit4.getBoundingClientRect().top - 75
-			});
-			startTimer();
-			checkCheck();
-		} else {
-			alert('Произошла ошибка отправки, попробуйте еще раз!');
+		itemCredit3.classList.remove('active-credit');
+		itemCredit4.classList.add('active-credit');
+		for (let i = 0; i < nameOutput.length; i++) {
+			nameOutput[i].innerHTML = `${formSurame.value} ${formName.value} ${formPatronymic.value}`;
 		}
+		window.scrollBy({
+			top: itemCredit4.getBoundingClientRect().top - 75
+		});
+		startTimer();
+		checkCheck();
 	} else {
 		labelPolitic.classList.add('error-check');
 	}
@@ -673,7 +669,7 @@ setInterval(() => {
 
 let carsSelect1 = document.querySelector('.cars-select1');
 let carsSelect2 = document.querySelector('.cars-select2');
-let requestURL = '../base/cars.json';
+let requestURL = '../car-money-work/base/cars.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';

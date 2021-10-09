@@ -126,6 +126,35 @@ for (let i = 0; i < onlyNumber.length; i++) {
 	});
 }
 
+let familyRadio = document.getElementById('radio-17');
+let familyTitle = document.querySelector('.family-title');
+let familyInputs = document.querySelector('.family-inputs');
+let radio18 = document.getElementById('radio-18');
+let radio19 = document.getElementById('radio-19');
+let radio20 = document.getElementById('radio-20');
+
+familyRadio.onchange = function () {
+	if (familyRadio.checked) {
+		familyTitle.classList.remove('input-none');
+		familyInputs.classList.remove('input-none');
+	} else if (!familyRadio.checked) {
+		familyTitle.classList.add('input-none');
+		familyInputs.classList.add('input-none');
+	}
+}
+radio18.onchange = function () {
+	familyTitle.classList.add('input-none');
+	familyInputs.classList.add('input-none');
+}
+radio19.onchange = function () {
+	familyTitle.classList.add('input-none');
+	familyInputs.classList.add('input-none');
+}
+radio20.onchange = function () {
+	familyTitle.classList.add('input-none');
+	familyInputs.classList.add('input-none');
+}
+
 let sumAuto = document.querySelector('.summ-auto');
 let sumFirstPay = document.querySelector('.summ-first-pay');
 let sumCredit = document.querySelector('.summ-credit');

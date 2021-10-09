@@ -109,7 +109,7 @@ h6 {
   font-style: normal
 }
 body {
-  font-family: roboto;
+  font-family: Roboto;
   color: #000;
   font-weight: 400
 }
@@ -2810,6 +2810,13 @@ input[type=checkbox]:checked + .questionnaire__label::after {
 }
 .block-7 {
   margin: 30px 0 -20px 0
+}
+.family-title {
+  margin: 20px 0 0 0
+}
+.family-title.input-none,
+.inputs__wrapper.input-none {
+  display: none
 }
 .width-oversize {
   width: 636px
